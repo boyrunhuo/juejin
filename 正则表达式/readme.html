@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</h1>
+<ul>
+<li>
+<h2 id="%E5%92%8C-%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F">^和$ 开始和结束</h2>
+<p>^代表开始位置,匹配的是一个__开始的位置__
+e.g.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//["", index: 0, input: "sss"]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'sss'</span>.match(<span class="hljs-regexp">/^/</span>))
+
+<span class="hljs-comment">//console.log('ssssbaa'.match(/^s+[a-z]+a$/));</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ssssbaa'</span>.match(<span class="hljs-regexp">/^s+[a-z]+a$/</span>));
+
+<span class="hljs-comment">//[ '', index: 3, input: 'sss' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'sss'</span>.match(<span class="hljs-regexp">/$/</span>))
+
+</div></code></pre>
+<p>上面的index就是正则匹配到的位置，很好的说明了^和$匹配的就是一个位置</p>
+</li>
+<li>
+<h2 id="%E8%BD%AC%E4%B9%89">转义 \</h2>
+<p>如果需要匹配 <strong>字符^</strong> 和 <strong>字符$</strong>, 就需要用到 <strong>转义</strong>: ,把 <strong>元字符转为普通字符</strong></p>
+<p>e.g.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ '$2.7', index: 0, input: '$2.7' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'$2.7'</span>.match(<span class="hljs-regexp">/^\$[0-9]+\.[0-9]+/</span>))
+
+</div></code></pre>
+<p>由于计算机通用字符太少，所以有时候需要用__转义加部分普通字符组成一些元字符__</p>
+<blockquote></blockquote>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界(boundary)</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配一个非单词边界</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符(digit)</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配一个空白字符(space)</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配一个非空白字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配一个字母或者一个数字或者一个下划线(word)</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配一个字母、数字和下划线之外的字符</td>
+</tr>
+</tbody>
+</table>
+<p><strong>\加大写字母就是\加小写字母的对立面</strong></p>
+<p>\b 匹配的也是一个位置，而不是一个字符。单词和空格之间的位置，就是所谓单词边界。(所谓单词边界，对中文等其他语言是无效的。)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ 's', index: 2, input: 'l s' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'l s'</span>.match(<span class="hljs-regexp">/\bs/</span>))
+
+<span class="hljs-comment">//null</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'l s'</span>.match(<span class="hljs-regexp">/\Bs/</span>))
+</div></code></pre>
+<p>\d匹配一个数字，注意，这里的数字不是指JavaScript中的数字类型，因为文本全是字符串。它指的是代表数字的字符。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '1', index: 0, input: '123456' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'123456'</span>.match(<span class="hljs-regexp">/\d/</span>));
+
+<span class="hljs-comment">// [ '123456', index: 0, input: '123456' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'123456'</span>.match(<span class="hljs-regexp">/\d+/</span>));
+</div></code></pre>
+<p>\s匹配一个空白字符。空白字符是 <strong>空格\f\n\r\t\v的总和</strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ 'a b', index: 0, input: 'a b' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'a b'</span>.match(<span class="hljs-regexp">/a\sb/</span>));
+
+<span class="hljs-comment">// null</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'a b'</span>.match(<span class="hljs-regexp">/\w\n\w/</span>));
+</div></code></pre>
+<p>\w匹配一个字母或者一个数字或者一个下划线。JavaScript中的变量规则，包括很多应用的用户名都只能是这三样，所以把它们放一起挺方便的。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ 'a_b', index: 0, input: 'a_b' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'a_b'</span>.match(<span class="hljs-regexp">/\w+/</span>));
+
+<span class="hljs-comment">// [ '诶-逼', index: 0, input: '诶-逼' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'诶-逼'</span>.match(<span class="hljs-regexp">/\W+/</span>));
+</div></code></pre>
+<p><strong>如果我们将大写和小写的带反斜杠的元字符组合在一起，就能匹配任何字符。</strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '@', index: 0, input: '@' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'@'</span>.match(<span class="hljs-regexp">/[\d\D]/</span>));
+</div></code></pre>
+<p>*## .
+. 匹配除了换行付\n外的所有单一字符</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ '咕噜咕噜刚刚@glglgl', index: 0, input: '咕噜咕噜刚刚@glglgl' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'咕噜咕噜刚刚@glglgl'</span>.match(<span class="hljs-regexp">/.+/</span>));
+
+<span class="hljs-comment">//[ 'j', index: 0, input: 'jkl' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'jkl'</span>.match(<span class="hljs-regexp">/./</span>));
+</div></code></pre>
+</li>
+<li>
+<h2 id="%E9%87%8F%E8%AF%8D">量词</h2>
+<p>如果想匹配一个单一字符多次，就需要用到 <strong>量词</strong></p>
+<table>
+<thead>
+<tr>
+<th>量词</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>？</td>
+<td>重复零次或者一次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一次或多次</td>
+</tr>
+<tr>
+<td>*</td>
+<td>重复任意次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m之间的次数</td>
+</tr>
+</tbody>
+</table>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '正正正', index: 0, input: '正正正正正' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'正正正正正'</span>.match(<span class="hljs-string">'正{1,3}'</span>));
+
+<span class="hljs-comment">// [ '正', index: 0, input: '正正正正正' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'正正正正正 '</span>.match(<span class="hljs-string">'正?'</span>));
+</div></code></pre>
+<p>量词不能紧贴着另外一个量词一次用</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// SyntaxError: Invalid regular expression: /正{1,3}+/: Nothing to repeat</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'正正正正正'</span>.match(<span class="hljs-string">'正{1,3}+'</span>));
+</div></code></pre>
+</li>
+<li>
+<h2 id="%E8%B4%AA%E5%A9%AA%E6%A8%A1%E5%BC%8F%E4%B8%8E%E9%9D%9E%E8%B4%AA%E5%A9%AA%E6%A8%A1%E5%BC%8F-%EF%BC%9F">贪婪模式与非贪婪模式 ？</h2>
+<p>如果量词后面紧跟着一个 <strong>？</strong>,这个时候？不是量词，而是开启非贪婪模式</p>
+<p>正则默认的是贪婪模式，会匹配尽量多</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '正正正', index: 0, input: '正正正正正' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'正正正正正'</span>.match(<span class="hljs-string">'正{1,3}'</span>));
+</div></code></pre>
+<p>如果量词后加上?,那就是 <strong>非贪婪模式</strong> ,会匹配尽量少的字符</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '正', index: 0, input: '正正正正正' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'正正正正正'</span>.match(<span class="hljs-string">'正{1,3}?'</span>));
+</div></code></pre>
+</li>
+<li>
+<h2 id="%E5%AD%97%E7%AC%A6%E7%BB%84-uo">字符组 [uo]</h2>
+<p>方括号在正则中表示一个区间，我们称它为字符组。</p>
+<p>正则中的普通字符只能匹配它自己。如果我要匹配一个普通字符,就要使用到字符组。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ 'fork', index: 0, input: 'fork' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'fork'</span>.match(<span class="hljs-string">'f[ou][cr]k'</span>));
+
+<span class="hljs-comment">//console.log('fork'.match('f[ou][cr]k'));</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'fuck'</span>.match(<span class="hljs-string">'f[ou][cr]k'</span>));
+</div></code></pre>
+<p>在字符组中，元字符不需要转义</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ '$', index: 0, input: '$' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'$'</span>.match(<span class="hljs-regexp">/[$%]/</span>));
+</div></code></pre>
+<p>^和-在字符组中有特殊含义</p>
+<p>^表示取反,-表示连字符</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ 'b', index: 1, input: 'abc' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'abc'</span>.match(<span class="hljs-regexp">/[^a]/</span>));
+<span class="hljs-comment">// [ 'abc123', index: 0, input: 'abc123' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'abc123'</span>.match(<span class="hljs-regexp">/[a-z]+[0-9]+/</span>));
+</div></code></pre>
+</li>
+<li>
+<h2 id="%E6%8D%95%E8%8E%B7%E7%BB%84%E4%B8%8E%E9%9D%9E%E6%8D%95%E8%8E%B7%E7%BB%84">捕获组与非捕获组 ()</h2>
+<p>单个字符加上量词，可以重复匹配多个量词</p>
+<p>如果需要 <strong>重复一个字符串</strong>，就需要使用到圆括号（）</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ 'you are a very very very big pig','very ',index: 0,input: 'you are a very very very big pig' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'you are a very very very big pig'</span>.match(<span class="hljs-string">'you are a (very )+big pig'</span>));
+</div></code></pre>
+<ul>
+<li>
+<h3 id="%E6%AD%A3%E5%88%99%E5%86%85%E6%8D%95%E8%8E%B7">正则内捕获</h3>
+<p>正则内捕获使用\数字的形式，分别对应前面的圆括号捕获的内容。这种捕获的引用也叫反向引用。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '&lt;div&gt;ab&lt;/div&gt;', 'div', index: 0, input: '&lt;div&gt;ab&lt;/div&gt;' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'&lt;div&gt;ab&lt;/div&gt;'</span>.match(<span class="hljs-regexp">/&lt;([a-zA-Z]+)&gt;.*&lt;\/\1&gt;/</span>));
+
+<span class="hljs-comment">//[ '&lt;div&gt;ab&lt;/div&gt;&lt;p&gt;ab&lt;/p&gt;','div','ab',index: 0,input: '&lt;div&gt;ab&lt;/div&gt;&lt;p&gt;ab&lt;/p&gt;' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'&lt;div&gt;ab&lt;/div&gt;&lt;p&gt;ab&lt;/p&gt;'</span>.match(<span class="hljs-regexp">/&lt;([a-zA-Z]+)&gt;(ab)+&lt;\/\1&gt;&lt;p&gt;\2&lt;\/p&gt;/</span>));
+</div></code></pre>
+</li>
+<li>
+<h3 id="%E6%AD%A3%E5%88%99%E5%A4%96%E6%8D%95%E8%8E%B7">正则外捕获</h3>
+<p>RegExp就是构造正则的构造函数。如果有捕获组，它的实例属性$数字会显示对应的引用。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// abc</span>
+<span class="hljs-string">'@abc'</span>.match(<span class="hljs-regexp">/@(abc)/</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">RegExp</span>.$<span class="hljs-number">1</span>);
+</div></code></pre>
+<p>一个捕获的常用方法，replace方法可以将特定内容替换为捕获的引用</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//hello &lt;strong&gt;regex&lt;/strong&gt;</span>
+<span class="hljs-built_in">console</span>.log( <span class="hljs-string">'hello **regex**'</span>.replace(<span class="hljs-regexp">/\*{2}(.*)\*{2}/</span>, <span class="hljs-string">'&lt;strong&gt;$1&lt;/strong&gt;'</span>));
+</div></code></pre>
+</li>
+<li>
+<h3 id="%E6%8D%95%E8%8E%B7%E5%91%BD%E5%90%8D-es2018%E6%96%B0%E7%89%B9%E6%80%A7">捕获命名 ES2018新特性</h3>
+<p>给捕获引用命名，使用的时候更稳定</p>
+<p>在捕获组内部最前面加上?<key>，它就被命名了。使用\k<key>语法就可以引用已经命名的捕获组。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// ["&lt;App&gt;hello regex&lt;/App&gt;", "App", index: 0, input: "&lt;App&gt;hello regex&lt;/App&gt;", groups: {tag: "App"}]</span>
+<span class="hljs-string">'&lt;App&gt;hello regex&lt;/App&gt;'</span>.match(<span class="hljs-regexp">/&lt;(?&lt;tag&gt;[a-zA-Z]+)&gt;.*&lt;\/\k&lt;tag&gt;&gt;/</span>);
+</div></code></pre>
+<p>（）包围的一个整体经常被用到，但是不一定需要它的引用，也就是不一定需要使用捕获组，因为捕获组会占用额外的内存去计算，所以就有了 <strong>非捕获组</strong> 的说法</p>
+<pre class="hljs"><code><div><span class="hljs-string">'@abc'</span>.match(<span class="hljs-regexp">/@(abc)/</span>);
+<span class="hljs-comment">// ["@abc", "abc", index: 0, input: "@abc", groups: undefined]</span>
+<span class="hljs-string">'@abc'</span>.match(<span class="hljs-regexp">/@(?:abc)/</span>);
+<span class="hljs-comment">// ["@abc", index: 0, input: "@abc", groups: undefined]</span>
+
+</div></code></pre>
+<p>只要在圆括号内最前面加上?:标识，就是告诉正则引擎：我只要这个整体，不需要它的引用，你就别费劲了。从下面的例子也可以看出来，match方法返回的结果有些许不一样。</p>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="%E5%88%86%E6%94%AF">分支 |</h2>
+<p>| 在正则表达式中表示“或”</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '这周打篮球', index: 0, input: '这周打篮球' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这周打篮球'</span>.match(<span class="hljs-regexp">/\W{2}(?:打篮球|睡觉|浪)/</span>));
+<span class="hljs-comment">// [ '这周浪', index: 0, input: '这周浪' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这周浪'</span>.match(<span class="hljs-regexp">/\W{2}(?:打篮球|睡觉|浪)/</span>));
+</div></code></pre>
+</li>
+<li>
+<h2 id="%E4%BF%AE%E9%A5%B0%E7%AC%A6">修饰符</h2>
+<p>正则表达式修饰符，写在正则表达式主体后面</p>
+<ul>
+<li>
+<h3 id="g%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%88%E5%BC%80%E5%90%AF%E5%85%A8%E5%B1%80%E5%8C%B9%E9%85%8D%EF%BC%89">g修饰符（开启全局匹配）</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// [ '科比', index: 2, input: '后卫科比 前锋詹姆斯 后卫库里' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'后卫科比 前锋詹姆斯 后卫库里'</span>.match(<span class="hljs-regexp">/(?&lt;=后卫)\S+/</span>));
+<span class="hljs-comment">// [ '科比', '库里' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'后卫科比 前锋詹姆斯 后卫库里'</span>.match(<span class="hljs-regexp">/(?&lt;=后卫)\S+/g</span>))
+</div></code></pre>
+<p>开启全局匹配后，会匹配完整个文本，找到所有的匹配结果。</p>
+</li>
+<li>
+<h3 id="i%E4%BF%AE%E9%A5%B0%E7%AC%A6-%EF%BC%88%E5%85%A8%E5%B1%80%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99%EF%BC%89">i修饰符 （全局忽略大小写）</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">//null</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'javascript is great'</span>.match(<span class="hljs-regexp">/JavaScript/</span>));
+<span class="hljs-comment">// [ 'javascript', index: 0, input: 'javascript is great' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'javascript is great'</span>.match(<span class="hljs-regexp">/JavaScript/i</span>));
+</div></code></pre>
+</li>
+<li>
+<h3 id="m%E4%BF%AE%E9%A5%B0%E7%AC%A6-%EF%BC%88%E5%A4%9A%E8%A1%8C%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%96%87%E6%9C%AC%E7%9A%84%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F%EF%BC%89">m修饰符 （多行模式,匹配文本的开始和结束）</h3>
+<p>m要和^和$配合使用，加上m修饰符，它们的含义就变成了行的开始和结束。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ 'xyz', index: 4, input: 'abc\nxyz' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`abc\nxyz`</span>.match(<span class="hljs-regexp">/xyz/</span>));
+
+<span class="hljs-comment">// null</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`abc\nxyz`</span>.match(<span class="hljs-regexp">/^xyz$/</span>));
+
+<span class="hljs-comment">//[ 'xyz', index: 4, input: 'abc\nxyz' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`abc\nxyz`</span>.match(<span class="hljs-regexp">/^xyz$/m</span>));
+</div></code></pre>
+</li>
+<li>
+<h3 id="s%E4%BF%AE%E9%A5%B0%E7%AC%A6-%EF%BC%88%E5%A2%9E%E5%BC%BA%E7%9A%84%E5%8A%9F%E8%83%BD%EF%BC%89">s修饰符 （增强.的功能）</h3>
+<p>ES2018新特性
+让.可以匹配任意单个字符</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// null</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'abc\nxyz'</span>.match(<span class="hljs-regexp">/'c.x'/</span>));
+<span class="hljs-comment">// ["c↵x", index: 3, input: "↵abc↵xyz↵", groups: undefined]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'abc\nxyz'</span>.match(<span class="hljs-regexp">/'c.x'/</span>s));
+</div></code></pre>
+</li>
+<li>
+<h3 id="u%E4%BF%AE%E9%A5%B0%E7%AC%A6-unicode%E6%A8%A1%E5%BC%8F">u修饰符 (unicode模式)</h3>
+<p>有一些Unicode字符超过一个字节，正则无法正确识别它们</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//[ '�', index: 0, input: '𠮷' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'𠮷'</span>.match(<span class="hljs-regexp">/./</span>));
+<span class="hljs-comment">//[ '𠮷', index: 0, input: '𠮷' ]</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'𠮷'</span>.match(<span class="hljs-regexp">/./u</span>));
+</div></code></pre>
+</li>
+<li>
+<h3 id="y%E4%BF%AE%E9%A5%B0%E7%AC%A6-%EF%BC%88%E7%B2%98%E8%BF%9E%E5%85%A8%E5%B1%80%E6%A8%A1%E5%BC%8F%EF%BC%89">y修饰符 （粘连全局模式）</h3>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="%E9%9B%B6%E5%AE%BD%E6%96%AD%E8%A8%80">零宽断言</h2>
+</li>
+</ul>
+
+</body>
+</html>

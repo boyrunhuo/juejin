@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>websocketTest</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function socketConnect(url) {
+    // 客户端与服务器进行连接
+    let ws = new WebSocket(url);
+
+    // 连接成功回调
+    ws.onopen = e => {
+      console.log('连接成功:', e);
+      ws.send('我发送消息给服务端')
+    }
+    //  监听服务器端返回信息
+    ws.onmessage = e => {
+      console.log('服务端返回:', e.data)
+    }
+
+    return ws;// websocket对象
+  }
+  let wsValue = socketConnect('ws://121.40.165.18:8800'); // websocket对象
+</script>
+</html>

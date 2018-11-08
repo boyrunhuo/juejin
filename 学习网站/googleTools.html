@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="mainContent">
+
+  </div>
+  <button id="breakon">breakon</button>
+  <button id="setAttr">setAttr</button>
+</body>
+<script>
+  var main = document.getElementById("mainContent")
+  var breakon = document.getElementById("breakon")
+  breakon.addEventListener("click", function() {
+    var span = document.createElement("span")
+    main.appendChild(span)
+  })
+  function geta() {
+    return 0
+  }
+  var a = geta()
+  var b = 1
+  var setAttr = document.getElementById("setAttr")
+  setAttr.addEventListener("click",function() {
+    main.className = "main"
+    var sum = a + b
+    return sum
+  })
+</script>
+</html>

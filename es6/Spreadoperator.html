@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>展开运算符</title>
+</head>
+<body>
+  
+</body>
+<script>
+// 合并数组 
+let favoriteFood = ['Pizza', 'Fries', 'Swedish-meatballs'];
+let otherFood = ['tomato', 'chicken']
+favoriteFood =  ['Pizza', ...otherFood, 'Fries', 'Swedish-meatballs'];
+console.log(favoriteFood);
+
+
+let arr1 = [1,2,3]
+let arr2 = arr1
+arr1.push(4)
+console.log(arr2);
+
+// 用展开运算符拷贝数组
+let arr3 = [1,2,3]
+let arr4= [...arr3]
+arr3.push(4)
+console.log(arr4);
+
+
+// 解构
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+console.log(x); // 1
+console.log(y); // 2
+console.log(z); // { a: 3, b: 4 }
+</script>
+</html>
