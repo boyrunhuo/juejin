@@ -1,3 +1,4 @@
+
 // 0.6061255024402574
 // Math.random()
 
@@ -76,16 +77,45 @@
 // // console.log(g.next());
 // g.throw('出错了')
 
-var fetch = require('node-fetch');
+// var fetch = require('node-fetch');
 
-function* gen(){
-  var url = 'https://api.github.com/users/github';
-  var result = yield fetch(url);
+// function* gen(){
+//   var url = 'https://api.github.com/users/github';
+//   var result = yield fetch(url);
+// }
+
+// var g = gen() 
+// // g.next()的value是一个Promise对象{ value: Promise { <pending> }, done: false }
+
+// g.next().value.then(res => {
+//   console.log(res);
+// })
+
+
+var resolveAfter2Seconds = function() {
+  console.log("starting slow promise");
+  return new Promise(resolve => {
+    setTimeout(function() {
+      resolve(20);
+      console.log("slow promise is done");
+    }, 2000)
+  })
 }
 
-var g = gen() 
-// g.next()的value是一个Promise对象{ value: Promise { <pending> }, done: false }
+var resolveAfter1Second = function() {
+  console.log("starting fast promise");
+  return new Promise(resolve => {
+    setTimeout(function() {
+      resolve(10);
+      console.log("fast promise is done");
+    }, 1000)
+  })
+}
 
-g.next().value.then(res => {
-  console.log(res);
-})
+var sequentialStart = async function() {
+  console.log('==SEQUENTIAL START==');
+  const slow = await resolveAfter2Seconds()
+  const fast = await resolveAfter1Second()
+  console.log(slow);
+  console.log(fast);
+}
