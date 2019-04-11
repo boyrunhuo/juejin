@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+(function() {
+    console.time('Timer1')// 计算函数运行时间
+
+    function getRand(limit) {
+        console.trace('trace')// 输出堆栈信息
+
+        var rnd = Math.random() * 200;
+        rnd = parseInt(rnd);
+        return rnd
+    }
+    function sum(a,b) {
+
+        var rnd = getRand(200)
+        a += rnd
+        b += 2*rnd
+
+        return a + b
+
+    }
+    console.log(sum(10,20))
+    console.timeEnd('Timer1')// 计算函数运行时间
+})()
+</script>
+</html>

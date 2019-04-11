@@ -1,0 +1,319 @@
+{
+    "code": 1,
+    "message": {
+        "detail": [{
+            "category_name": "apk信息",
+            "data_column": ["content"],
+            "data_content": [
+                ["文件名称: 1547780184814_Greenify.v4.5.1-7232-o_1cuu8ghegditbee1ugk2tv1u0aq-uid-416516.apk\n文件大小: 3.98MB (4168467 字节)\nMD5值: 03ca991242bcb901fc3573bf41f70e5d\npackageName: com.oasisfeng.greenify\nversionCode: 45100\nversionName: 4.5.1\nminSDKVersion: 21\ntargetSDKVersion: 26\nabi: all\npermission(s): [30]\nactivity(s): [12]\nservice(s): [25]\nreceiver(s): [11]\nprovider(s): [7]\nlauncher: com.oasisfeng.greenify.GreenifyActivity"]
+            ]
+        }, {
+            "category_name": "签名检查",
+            "data_column": ["content"],
+            "data_content": [
+                ["签名校验(apkSigner):\r\n\r\nVerifies\nVerified using v1 scheme (JAR signing): true\nVerified using v2 scheme (APK Signature Scheme v2): true\nNumber of signers: 1\nWARNING: META-INF/android.arch.core_runtime.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/android.arch.lifecycle_extensions.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/android.arch.lifecycle_livedata-core.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/android.arch.lifecycle_livedata.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/android.arch.lifecycle_runtime.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/android.arch.lifecycle_viewmodel.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/android.support.design_material.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.appcompat_appcompat.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.asynclayoutinflater_asynclayoutinflater.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.cardview_cardview.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.coordinatorlayout_coordinatorlayout.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.core_core.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.cursoradapter_cursoradapter.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.customview_customview.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.documentfile_documentfile.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.drawerlayout_drawerlayout.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.fragment_fragment.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.interpolator_interpolator.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.legacy_legacy-support-core-ui.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.legacy_legacy-support-core-utils.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.loader_loader.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.localbroadcastmanager_localbroadcastmanager.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.print_print.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.recyclerview_recyclerview.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.slidingpanelayout_slidingpanelayout.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.swiperefreshlayout_swiperefreshlayout.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.transition_transition.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.vectordrawable_vectordrawable-animated.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.vectordrawable_vectordrawable.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.versionedparcelable_versionedparcelable.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/androidx.viewpager_viewpager.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/com.android.databinding_baseAdapters.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/com.android.databinding_library.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/com.android.support_customtabs.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/com.google.android.material_material.version not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/proguard/androidx-annotations.pro not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/."],
+                ["签名信息 [CERT.RSA]:\r\n\r\nOwner: CN=Oasis Feng\nIssuer: CN=Oasis Feng\nSerial number: 50ac911f\nValid from: Wed Nov 21 16:30:23 CST 2012 until: Fri Nov 14 16:30:23 CST 2042\nCertificate fingerprints:\n\t MD5:  14:D5:86:45:A1:2D:42:93:A9:C8:9E:57:60:FE:6E:16\n\t SHA1: 6B:DB:E6:CE:E1:81:B0:F3:1F:87:61:0D:AC:CC:8A:B7:7F:8A:D4:03\n\t SHA256: 44:3B:BA:F9:F4:15:3B:55:8B:C1:43:C8:34:67:42:EC:BF:4B:2A:B3:4A:EB:74:7E:01:C6:B3:03:18:97:2C:20\n\t Signature algorithm name: SHA1withRSA\n\t Version: 3"]
+            ]
+        }, {
+            "category_name": "系统级权限",
+            "data_column": ["权限名称", "权限描述"],
+            "data_content": [
+                ["android.permission.DUMP", "允许应用程序从系统服务检索状态转储信息。"],
+                ["android.permission.FORCE_STOP_PACKAGES", "允许应用程序调用（android.app.ActivityManager #forceStopPackage）。"],
+                ["android.permission.GET_APP_OPS_STATS", "允许应用程序收集应用程序操作统计信息不适用于第三方应用。"],
+                ["android.permission.INTERACT_ACROSS_USERS", "允许应用程序调用API，允许它使用单件服务和以用户为目标的广播，在设备上的用户之间进行交互。此权限不适用于第三方应用程序。"],
+                ["android.permission.READ_LOGS", "允许应用程序读取低级系统日志文件。"],
+                ["android.permission.REAL_GET_TASKS", "应用程序可以请求的新版GET_TASKS，因为GET_TASKS并不真正提供对任务信息的访问权限。我们需要这个新的应用程序，因为有许多现有的应用程序使用添加库，并且具有验证代码以确保应用程序通过查看是否已获得权限来请求GET_TASKS权限...如果它没有，则会杀死该应用程序带有关于被沮丧的消息。因此，我们需要让它继续看起来应用程序获得该权限，即使它永远不会被检查，并且新的特权应用程序现在可以请求此实例访问。"],
+                ["android.permission.UPDATE_CONFIG", "允许应用程序启动配置更新"],
+                ["android.permission.WRITE_SECURE_SETTINGS", "允许应用程序读取或写入安全系统设置。"]
+            ]
+        }, {
+            "category_name": "危险权限",
+            "data_column": ["权限名称", "权限组", "权限描述"],
+            "data_content": [
+                ["android.permission.PACKAGE_USAGE_STATS", "", "允许应用程序收集组件使用情况统计信息声明权限意味着使用API??的意图，设备用户可以通过“设置”应用程序授予权限。"],
+                ["android.permission.SYSTEM_ALERT_WINDOW", "", "允许应用使用类型WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY创建窗口，显示在所有其他应用之上。很少有应用程序应该使用此权限;这些窗口用于与用户进行系统级交互。注意：如果应用面向API级别23或更高级别，则应用用户必须通过权限管理屏幕向应用明确授予此权限。该应用程序通过发送具有操作Settings.ACTION_MANAGE_OVERLAY_PERMISSION的意图来请求用户的批准。该应用可以通过调用Settings.canDrawOverlays（）来检查它是否具有此授权。"],
+                ["android.permission.WRITE_SETTINGS", "", "允许应用程序读取或写入系统设置。注意：如果应用面向API级别23或更高级别，则应用用户必须通过权限管理屏幕向应用明确授予此权限。该应用程序通过发送具有操作Settings.ACTION_MANAGE_WRITE_SETTINGS的意图来请求用户的批准。应用程序可以通过调用Settings.System.canWrite（）来检查它是否具有此授权。"],
+                ["android.permission.GET_ACCOUNTS", "访问您的联系人", "允许访问帐户服务中的帐户列表。注意：从Android 6.0（API级别23）开始，如果应用程序共享管理帐户的身份验证器的签名，则不需要“GET_ACCOUNTS”权限来读取有关该帐户的信息。在Android 5.1及更低版本中，所有应用都需要“GET_ACCOUNTS”权限才能阅读有关任何帐户的信息。"]
+            ]
+        }, {
+            "category_name": "普通权限",
+            "data_column": ["权限名称", "状态", "权限描述"],
+            "data_content": [
+                ["android.permission.ACCESS_NETWORK_STATE", "", "允许应用程序访问有关网络的信息。"],
+                ["android.permission.DISABLE_KEYGUARD", "", "允许应用程序在密钥保护不安全时禁用它。"],
+                ["android.permission.EXPAND_STATUS_BAR", "", "允许应用程序展开或折叠状态栏。"],
+                ["android.permission.FOREGROUND_SERVICE", "", "允许常规应用程序使用Service.startForeground。"],
+                ["android.permission.FOREGROUND_SERVICE", "", "允许常规应用程序使用Service.startForeground。"],
+                ["android.permission.GET_TASKS", "", "此常量在API级别21中已弃用。不再强制执行。此常量在API级别21中已弃用。不再强制执行。"],
+                ["android.permission.INTERNET", "", "允许应用程序打开网络套接字。"],
+                ["android.permission.READ_SYNC_SETTINGS", "", "允许应用程序读取同步设置。"],
+                ["android.permission.READ_SYNC_STATS", "", "允许应用程序读取同步统计信息。"],
+                ["android.permission.RECEIVE_BOOT_COMPLETED", "", "允许应用程序接收系统完成引导后广播的Intent.ACTION_BOOT_COMPLETED。如果您未请求此权限，则您当时不会收到广播。虽然持有此权限不会产生任何安全隐患，但它可能会增加系统启动所需的时间并允许应用程序在用户不知道的情况下自行运行，从而对用户体验产生负面影响。因此，您必须明确声明您对此工具的使用，以使其对用户可见。"],
+                ["android.permission.WAKE_LOCK", "", "允许使用PowerManager WakeLocks防止处理器休眠或屏幕变暗。"],
+                ["android.permission.WRITE_SYNC_SETTINGS", "", "允许应用程序写入同步设置。"],
+                ["com.android.launcher.permission.INSTALL_SHORTCUT", "", "允许应用程序在Launcher中安装快捷方式。在Android O（API级别26）及更高版本中，INSTALL_SHORTCUT广播对您的应用不再有任何影响，因为它是私有的隐式广播。相反，您应该使用ShortcutManager类中的requestPinShortcut（）方法创建应用程序快捷方式。"]
+            ]
+        }, {
+            "category_name": "非官方权限",
+            "data_column": ["权限名称", "权限描述"],
+            "data_content": [
+                ["com.google.android.c2dm.permission.RECEIVE", "GCM推送需要的权限"],
+                ["com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE", "AppsFlyerSDK接入要求"],
+                ["com.oasisfeng.greenify.INTERNAL", "未知权限"],
+                ["com.oasisfeng.island.permission.FREEZE_PACKAGE", "未知权限"],
+                ["com.oasisfeng.island.permission.LAUNCH_PACKAGE", "未知权限"]
+            ]
+        }, {
+            "category_name": "java代码混淆率",
+            "data_column": ["分类", "总数", "未混淆", "混淆(source)", "混淆", "未知"],
+            "data_content": [
+                ["all", "4831", "0(0.00%)", "0(0.00%)", "4831(100.00%)", "0(0.00%)"],
+                ["com.duoyi", "0", "0", "0", "0", "0"],
+                ["com.duoyi.pushservice", "0", "0", "0", "0", "0"]
+            ]
+        }, {
+            "category_name": "api功能收集",
+            "data_column": ["严重程度", "规则", "文件列表"],
+            "data_content": [
+                ["info", "Android密钥库系统", "[1]: cbi\n[2]: cig"],
+                ["info", "ContentProvider", "[1]: bys\n[2]: cbl\n[3]: cey\n[4]: com.crashlytics.android.CrashlyticsInitProvider\n[5]: com.google.firebase.provider.FirebaseInitProvider\n[6]: com.oasisfeng.greenify.engine.data.GreenifiedAppsProvider\n[7]: hf"],
+                ["info", "GPS定位", "[1]: ln"],
+                ["info", "HTTPS连接", "[1]: azt\n[2]: bdz\n[3]: cia"],
+                ["info", "SMS/通信录查询", "[1]: aso\n[2]: asq\n[3]: bys\n[4]: cbl\n[5]: com.google.android.gms.dynamite.DynamiteModule\n[6]: ip\n[7]: pj"],
+                ["info", "TCP通信", "[1]: bdz"],
+                ["info", "java反射", "[1]: hx\n[2]: bwi$7\n[3]: ava\n[4]: cky\n[5]: ckx$f\n[6]: fm\n[7]: bor\n[8]: me$b\n[9]: bvk\n[10]: oo\n..."],
+                ["info", "加密/解密", "[1]: aop"],
+                ["info", "动态加载", "[1]: abh"],
+                ["info", "执行指令", "[1]: cfi$c"],
+                ["info", "文件操作", "[1]: sg\n[2]: azy\n[3]: afg\n[4]: cbg$1\n[5]: com.oasisfeng.greenify.notification.ui.QuickActionNotificationService\n[6]: cbg$3\n[7]: qi\n[8]: aff\n[9]: afb\n[10]: ccn\n..."],
+                ["info", "通知栏提示", "[1]: bzj\n[2]: ccg\n[3]: ccn\n[4]: cco$a\n[5]: com.oasisfeng.greenify.notification.NotificationListenerDelegate\n[6]: com.oasisfeng.greenify.notification.gadget.NotificationService\n[7]: gx\n[8]: vf\n[9]: vj"]
+            ]
+        }, {
+            "category_name": "权限扫描细节",
+            "data_column": ["权限名称", "状态", "涉及文件列表"],
+            "data_content": [
+                ["android.permission.READ_PHONE_STATE", "缺失", "[1] /aof.smali\n[2] /caw$a$2.smali\n[3] /caw$a.smali\n[4] /cba.smali\n[5] /com/oasisfeng/greenify/HibernationRestrictedService.smali"],
+                ["android.permission.ACCESS_FINE_LOCATION", "缺失", "[1] /ln.smali"],
+                ["android.permission.WRITE_EXTERNAL_STORAGE", "缺失", "[1] /bzx.smali\n[2] /he.smali\n[3] /hf.smali"],
+                ["android.permission.ACCESS_COARSE_LOCATION", "缺失", "[1] /ln.smali"]
+            ]
+        }, {
+            "category_name": "链接识别",
+            "data_column": ["所在文件", "信息内容"],
+            "data_content": [
+                ["cbg", "[1] http://xmlpull.org/v1/doc/features.html#indent-output"],
+                ["bym", "[1] https://play.google.com/store/apps/details?id="],
+                ["adu", "[1] http://goo.gl/8Rd3yj"],
+                ["ahy", "[1] http://hostname/"],
+                ["ccr", "[1] http://xmlpull.org/v1/doc/features.html#process-namespaces\n[2] http://greenify.github.io/schemas/prescription/v"],
+                ["cjb", "[1] https://settings.crashlytics.com/spi/v2/platforms/android/apps/%s/settings"],
+                ["aer", "[1] https://ssl.google-analytics.com\n[2] http://www.google-analytics.com"],
+                ["aqr", "[1] https://www.google-analytics.com"],
+                ["com.oasisfeng.greenify.pro.SetupGuideActivity", "[1] http://repo.xposed.info/module/de.robv.android.xposed.installer"],
+                ["com.oasisfeng.greenify.utils.PackageManagerExt", "[1] http://schemas.android.com/apk/res/android"],
+                ["cac$a", "[1] https://oasisfeng.github.io/island/\n[2] http://greenify.uservoice.com/knowledgebase/articles/633133\n[3] http://greenify.uservoice.com/knowledgebase/articles/749142"],
+                ["bfz", "[1] https://www.googletagmanager.com"],
+                ["ua", "[1] https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps"],
+                ["sh", "[1] https://fabric.io/sign_up"],
+                ["acy", "[1] http://goo.gl/naFqQk"],
+                ["cdb$d", "[1] https://api.github.com/repos/"],
+                ["civ", "[1] https://e.crashlytics.com/spi/v2/events"],
+                ["bim", "[1] http://hostname/"],
+                ["azc", "[1] https://app-measurement.com/a"],
+                ["bdy", "[1] https://www.google.com\n[2] https://goo.gl/NAOOOI"],
+                ["hq", "[1] http://schemas.android.com/apk/res/android"],
+                ["zc", "[1] https://plus.google.com/"]
+            ]
+        }, {
+            "category_name": "敏感字符串识别",
+            "data_column": ["所在文件", "信息内容"],
+            "data_content": [
+                ["cgs", "[1] \"9774d56d682e549c\""],
+                ["cgd", "[1] \"470fa2b4ae81cd56ecbcda9735803434cec591fa\""],
+                ["cbe", "[1] \"SHA512withRSA\""],
+                ["rq", "[1] \"470fa2b4ae81cd56ecbcda9735803434cec591fa\""]
+            ]
+        }, {
+            "category_name": "以下权限未在代码中申请:",
+            "data_column": ["content"],
+            "data_content": ["android.permission.SYSTEM_ALERT_WINDOW", "android.permission.WRITE_SETTINGS", "android.permission.GET_ACCOUNTS"]
+        }, {
+            "category_name": "dgwSdk接入分析",
+            "data_column": ["content"],
+            "data_content": [
+                ["无可扫描文件"]
+            ]
+        }],
+
+
+
+        
+        "problem_list": [{
+            "category_name": "主配置文件分析",
+            "description": "主配置文件中android:allowBackup为true. 这会导致app数据可以被备份导出",
+            "result": "error",
+            "solution": "在项目主配置文件中设置为android:allowBackup=\"false\""
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.DUMP' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.FORCE_STOP_PACKAGES' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.GET_APP_OPS_STATS' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.INTERACT_ACROSS_USERS' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.READ_LOGS' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.REAL_GET_TASKS' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.UPDATE_CONFIG' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "权限整理与检查",
+            "description": "'android.permission.WRITE_SECURE_SETTINGS' 是个系统级别的权限，并不开放给第三方应用使用",
+            "result": "error",
+            "solution": "在主配置文件上移除该系统权限"
+        }, {
+            "category_name": "Google Play 上架检查",
+            "description": "android.permission.SYSTEM_ALERT_WINDOW等权限需要运行时申请，但在代码中没有实现动态申请",
+            "result": "warning",
+            "solution": "请移除该权限, 或在运行时申请"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "组件'com.oasisfeng.greenify.GreenifyShortcut' taskAffinity设置为true. 这个有可能会将传递给该组件的数据被其他应用栈上的应用给截获",
+            "result": "warning",
+            "solution": "如果不是特殊需要，建议是移除该设置项采用默认配置"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "组件'com.oasisfeng.greenify.HibernationLaunchpad' taskAffinity设置为true. 这个有可能会将传递给该组件的数据被其他应用栈上的应用给截获",
+            "result": "warning",
+            "solution": "如果不是特殊需要，建议是移除该设置项采用默认配置"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "组件'com.oasisfeng.greenify.tasker.TaskerPluginActivity' taskAffinity设置为true. 这个有可能会将传递给该组件的数据被其他应用栈上的应用给截获",
+            "result": "warning",
+            "solution": "如果不是特殊需要，建议是移除该设置项采用默认配置"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "activity组件 com.oasisfeng.greenify.prescription.ui.PrescriptionListActivity 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.DozeService 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.DozeTrackerService 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.AccessibilityDispatcher$Alt 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.notification.NotificationListenerDelegate 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.nevo.NotificationKeeper 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.notification.gadget.NotificationService 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 com.oasisfeng.greenify.notification.ui.QuickActionNotificationService 的enable属性被设置为false，这种情况下组件未启用",
+            "result": "warning",
+            "solution": "在主配置文件上对于该组件，设置enable为true"
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 'com.oasisfeng.container.InternalService$_2' 被权限 'android.permission.BIND_JOB_SERVICE' 控制, 但这个权限没有在当前主配置文件上声明",
+            "result": "warning",
+            "solution": ""
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 'com.oasisfeng.container.InternalService$_3' 被权限 'android.permission.BIND_JOB_SERVICE' 控制, 但这个权限没有在当前主配置文件上声明",
+            "result": "warning",
+            "solution": ""
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "service组件 'com.oasisfeng.container.InternalService$_4' 被权限 'android.permission.BIND_JOB_SERVICE' 控制, 但这个权限没有在当前主配置文件上声明",
+            "result": "warning",
+            "solution": ""
+        }, {
+            "category_name": "主配置文件分析",
+            "description": "provider组件 'com.oasisfeng.mesh.SettingsProxy' 组件暴露: 属性exported被设置为true或是未设置exported值但IntentFilter不为空时，组件被认为是导出的，可通过设置相应的Intent唤起。黑客可能构造恶意数据针对导出activity组件实施越权攻击",
+            "result": "warning",
+            "solution": "如果组件不需要与其他app共享数据或交互，请将主配置文件中设置该组件为exported = \"false\"。如果组件需要与其他app共享数据或交互， 请对组件进行权限控制和参数校验"
+        }, {
+            "category_name": "敏感信息检索",
+            "description": "代码中[链接识别] 发现条目数量: 27",
+            "result": "warning",
+            "solution": ""
+        }, {
+            "category_name": "敏感信息检索",
+            "description": "代码中[敏感字符串识别] 发现条目数量: 4",
+            "result": "warning",
+            "solution": ""
+        }, {
+            "category_name": "权限缺失检查",
+            "description": "相关代码调用要求 \"android.permission.READ_PHONE_STATE\" 权限，但该权限没有声明",
+            "result": "warning",
+            "solution": "确定相关接口是否在实际上会使用。如果有可能会被调用，请在主配置文件上声明该权限"
+        }, {
+            "category_name": "权限缺失检查",
+            "description": "相关代码调用要求 \"android.permission.ACCESS_FINE_LOCATION\" 权限，但该权限没有声明",
+            "result": "warning",
+            "solution": "确定相关接口是否在实际上会使用。如果有可能会被调用，请在主配置文件上声明该权限"
+        }, {
+            "category_name": "权限缺失检查",
+            "description": "相关代码调用要求 \"android.permission.WRITE_EXTERNAL_STORAGE\" 权限，但该权限没有声明",
+            "result": "warning",
+            "solution": "确定相关接口是否在实际上会使用。如果有可能会被调用，请在主配置文件上声明该权限"
+        }, {
+            "category_name": "权限缺失检查",
+            "description": "相关代码调用要求 \"android.permission.ACCESS_COARSE_LOCATION\" 权限，但该权限没有声明",
+            "result": "warning",
+            "solution": "确定相关接口是否在实际上会使用。如果有可能会被调用，请在主配置文件上声明该权限"
+        }, {
+            "category_name": "签名检查",
+            "description": "在META-INF目录下存在有'android.arch.lifecycle_livedata-core.version'等文件，这些文件不受签名保护，可以绕过签名校验直接修改内容，存在安全漏洞",
+            "result": "warning",
+            "solution": "如果是某些第三方库打包进来的文件，可以考虑在build.gradle上配置packagingOptions{exclude XXX}的方式忽略文件；如果是自行写入到该目录下，建议移除文件，寻求其他存储方式"
+        }, {
+            "category_name": "java混淆度分析",
+            "description": "不存在 com.duoyi 包结构",
+            "result": "info",
+            "solution": ""
+        }]
+    }
+}

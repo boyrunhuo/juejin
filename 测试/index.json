@@ -1,0 +1,57 @@
+{
+    "code": 1,
+    "message": {
+        "detail": [{
+            "category_name": "apk信息",
+            "data_column": ["content"],
+            "data_content": [
+                ["文件名称: 1547724313847_gpupload31.apk\n文件大小: 626.40KB (641437 字节)\nMD5值: 9d0e3e06edbfa86644e1880065ee76ac\npackageName: com.duoyi.gpuploadtest\nversionCode: 31\nversionName: 1.31\nminSDKVersion: 10\ntargetSDKVersion: 26\nabi: all\npermission(s): [2]\nactivity(s): [1]\nservice(s): [0]\nreceiver(s): [0]\nprovider(s): [0]\nlauncher: com.duoyi.appdemo.ObbActivity"]
+            ]
+        }, {
+            "category_name": "签名检查",
+            "data_column": ["content"],
+            "data_content": [
+                ["签名校验(apkSigner):\r\n\r\nVerifies\nVerified using v1 scheme (JAR signing): true\nVerified using v2 scheme (APK Signature Scheme v2): false\nNumber of signers: 1"],
+                ["签名信息 [RELEASE_.RSA]:\r\n\r\nOwner: CN=duoyi, OU=duoyi, O=duoyi, L=gz, ST=gd, C=ch\nIssuer: CN=duoyi, OU=duoyi, O=duoyi, L=gz, ST=gd, C=ch\nSerial number: 52c25694\nValid from: Tue Dec 31 13:31:00 CST 2013 until: Wed Oct 03 13:31:00 CST 2068\nCertificate fingerprints:\n\t MD5:  15:05:72:42:EC:5E:64:95:B0:44:3A:56:F7:6A:E7:87\n\t SHA1: 0B:FF:DE:9F:1F:1A:3C:E7:D1:26:35:C0:8F:08:EA:2B:9F:52:9D:6F\n\t SHA256: 91:68:84:8A:E7:ED:CC:0C:47:BF:04:15:77:C9:82:40:CE:21:AC:75:E5:F9:6D:F5:67:91:7E:BB:97:82:73:3D\n\t Signature algorithm name: SHA1withRSA\n\t Version: 3"]
+            ]
+        }, {
+            "category_name": "危险权限",
+            "data_column": ["权限名称", "权限组", "权限描述"],
+            "data_content": [
+                ["android.permission.READ_EXTERNAL_STORAGE", "访问设备上的照片，媒体和文件", "允许应用程序从外部存储读取。任何声明WRITE_EXTERNAL_STORAGE权限的应用程序都会被隐式授予此权限。从API级别19开始强制执行此权限。在API级别19之前，不会强制执行此权限，并且所有应用程序仍有权从外部存储读取。您可以通过在运行Android 4.1或更高版本的设备上的“设置”应用中的“开发者”选项下启用“保护USB存储”来强制执行权限来测试您的应用。同样从API级别19开始，读取/写入Context.getExternalFilesDir（String）和Context.getExternalCacheDir（）返回的特定于应用程序的目录中的文件不需要此权限。注意：如果您的minSdkVersion和targetSdkVersion值都设置为3或更低，系统会隐式授予您的应用此权限。如果您不需要此权限，请确保targetSdkVersion为4或更高。"],
+                ["android.permission.WRITE_EXTERNAL_STORAGE", "访问设备上的照片，媒体和文件", "允许应用程序写入外部存储。注意：如果您的minSdkVersion和targetSdkVersion值都设置为3或更低，系统会隐式授予您的应用此权限。如果您不需要此权限，请确保targetSdkVersion为4或更高。从API级别19开始，读取/写入Context.getExternalFilesDir（String）和Context.getExternalCacheDir（）返回的特定于应用程序的目录中的文件不需要此权限。"]
+            ]
+        }, {
+            "category_name": "java代码混淆率",
+            "data_column": ["分类", "总数", "未混淆", "混淆(source)", "混淆", "未知"],
+            "data_content": [
+                ["all", "481", "0(0.00%)", "0(0.00%)", "481(100.00%)", "0(0.00%)"],
+                ["com.duoyi", "5", "0(0.00%)", "0(0.00%)", "5(100.00%)", "0(0.00%)"],
+                ["com.duoyi.pushservice", "0", "0", "0", "0", "0"]
+            ]
+        }, {
+            "category_name": "api功能收集",
+            "data_column": ["严重程度", "规则", "文件列表"],
+            "data_content": [
+                ["info", "文件操作", "[1]: a.a.a.j"]
+            ]
+        }, {
+            "category_name": "dgwSdk接入分析",
+            "data_column": ["content"],
+            "data_content": [
+                ["无可扫描文件"]
+            ]
+        }],
+        "problem_list": [{
+            "category_name": "Google Play 上架检查",
+            "description": "Google Play 预审条目通过检查",
+            "result": "info",
+            "solution": ""
+        }, {
+            "category_name": "java混淆度分析",
+            "description": "java混淆检查通过, 混淆度：5(100.00%)",
+            "result": "info",
+            "solution": ""
+        }]
+    }
+}
