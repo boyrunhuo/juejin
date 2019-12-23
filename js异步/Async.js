@@ -91,31 +91,83 @@
 //   console.log(res);
 // })
 
+// ---------------------------------------------------------------------
+// var resolveAfter2Seconds = function() {
+//   console.log("starting slow promise");
+//   return new Promise((resolve,reject) => {
+//     setTimeout(function() {
+//       resolve(20);
+//       console.log("slow promise is done");
+//     }, 2000)
+//   })
+// }
 
-var resolveAfter2Seconds = function() {
-  console.log("starting slow promise");
-  return new Promise(resolve => {
-    setTimeout(function() {
-      resolve(20);
-      console.log("slow promise is done");
-    }, 2000)
-  })
-}
+// var resolveAfter1Second = function() {
+//   console.log("starting fast promise");
+//   return new Promise((resolve,reject) => {
+//     setTimeout(function() {
+//       resolve(10);
+//       console.log("fast promise is done");
+//     }, 1000)
+//   })
+// }
 
-var resolveAfter1Second = function() {
-  console.log("starting fast promise");
-  return new Promise(resolve => {
-    setTimeout(function() {
-      resolve(10);
-      console.log("fast promise is done");
-    }, 1000)
-  })
-}
+// var sequentialStart = async function() {
+//   console.log('==SEQUENTIAL START==');
+//   const slow = await resolveAfter2Seconds()
+//   const fast = await resolveAfter1Second()
+//   console.log('slow',slow);
+//   console.log('fast',fast);
+// }
 
-var sequentialStart = async function() {
-  console.log('==SEQUENTIAL START==');
-  const slow = await resolveAfter2Seconds()
-  const fast = await resolveAfter1Second()
-  console.log(slow);
-  console.log(fast);
-}
+// sequentialStart()
+
+
+/**
+ * Promise.all()
+ */
+
+// var items = [1,2,3,4,5]
+// var fn = function asyncMultiplyBy2(v){
+//   return new Promise((resolve, reject) => setTimeout(() => {resolve(v*2)},1000))
+// }
+
+// var actions = items.map(fn)
+
+// console.log('actions',actions);
+
+// var results = Promise.all(actions)
+
+// console.log('results',results);
+
+
+// results.then(data => {
+//   console.log(data);
+  
+// })
+
+/**
+ * forEachPromise
+ */
+
+ function forEachPromise(items,fn) {
+   return items.reduce(function(promise,item)  {
+     return promise.then(function() {
+      return fn(item)
+     })
+   },Promise.resolve())
+ }
+
+ var items = ['a', 'b', 'c'];
+
+ function logItem(item) {
+   return new Promise((resolve, reject) => {
+     process.nextTick(() => {
+       console.log(item)
+       resolve()
+     })
+   })
+ }
+ forEachPromise(items, logItem).then(() => {
+   console.log('done');
+ })

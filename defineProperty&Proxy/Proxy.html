@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var proxy = new Proxy({} , {
+        get: function (obj, prop) {
+            console.log('get', obj, prop);
+
+            return obj[prop]
+        },
+        set: function (obj, prop, value) {
+            console.log('set');
+            obj[prop] = value
+        },
+        has(target, key) {
+            console.log('has',target,key);
+            
+            if (key[0] === '_') {
+                return false;
+            }
+            return key in target;
+        }
+    })
+
+    proxy.time = 35
+    proxy.name = 'felix'
+    proxy._prop = 'foo'
+    console.log(proxy.time);
+    console.log('_prop' in proxy);
+    
+</script>
+
+</html>
