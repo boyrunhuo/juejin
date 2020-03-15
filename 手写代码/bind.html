@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const module = {
+        x:42,
+        getX:function() {
+            return this.x
+        }
+    }
+
+    const unboundGetX = module.getX
+    console.log(unboundGetX())
+
+    // const boundGetX = unboundGetX.bind(module);
+    // console.log(boundGetX());
+
+    /**
+     * bind:
+     * 创建一个新函数
+     * 当这个新函数被调用时，bind()的第一个参数将作为它运行时的this
+     * 而其余参数将作为新函数的参数，供调用时使用
+    */
+
+    Function.prototype.bind2 = function(content) {
+        if(typeof this != 'function') {
+            throw Error('not a function')
+        }
+
+        let fn = this
+        let args = [...arguments].slice(1)
+
+        let resFn = function() {
+            return fn.apply(this instanceof resFn ? this : content,args.concat(...arguments))
+        }
+
+        function tmp() {}
+        tmp.prototype = this.prototype
+        resFn.prototype = new tmp()
+
+        return resFn
+    }
+
+    const boundGetX = unboundGetX.bind2(module);
+    console.log(boundGetX());
+</script>
+</html>

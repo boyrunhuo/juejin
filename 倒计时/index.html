@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //继续线程占用
+    // setInterval(function () {
+    //     var j = 0;
+    //     while (j++ < 100000000);
+    // }, 0);
+
+    //倒计时
+    var interval = 1000,
+        ms = 50000, //从服务器和活动开始时间计算出的时间差，这里测试用50000ms,实际应该从服务器获取到当前时间戳和结束时间戳
+        count = 0,//计时的index
+        startTime = new Date().getTime();
+
+    if (ms >= 0) {
+        var timeCounter = setTimeout(countDownStart, interval);
+    }
+
+    function countDownStart() {
+        count++;
+        //一次执行，计算一次误差，理想情况是0
+        var offset = new Date().getTime() - (startTime + count * interval);
+        //一次执行有误差，在下一次补回来，比如这次执行间隔为1000ms，这次误差500ms，下次的执行间隔就为1000 -500 = 500ms
+        var nextTime = interval - offset;
+        //如果要补的时间小于0，那下次就立即执行
+        if (nextTime < 0) {
+            nextTime = 0
+        };
+        //剩余时间就用上面算的服务器和活动开始时间计算出的时间差 - 一次执行的间隔时间，通常是1000ms
+        ms -= interval;
+        console.log("误差：" + offset + "ms，下一次执行：" + nextTime + "ms后，离活动开始还有：" + ms + "ms");
+        if (ms < 0) {
+            //当倒计时结束，清空计时器
+            clearTimeout(timeCounter);
+        } else {
+            //倒计时未结束，递归执行以上步骤
+            timeCounter = setTimeout(countDownStart, nextTime);
+        }
+    }
+</script>
+
+</html>

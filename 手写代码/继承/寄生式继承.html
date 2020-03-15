@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //核心
+    //在原型式继承的基础上，增强对象，返回构造函数
+    function object(obj) {
+        //object()对传入其中的对象执行了一次浅复制，将构造函数F的原型直接指向传入的对象。
+        function F() {}
+        F.prototype = obj
+        return new F()
+    }
+    //Object.create相当于object方法
+    function createAnother(obj) {
+        var clone = Object.create(obj)
+        clone.sayHi = function() {
+            console.log('hi')
+        }
+        return clone
+    }
+
+    var person = {
+        name: "Nicholas",
+        friends: ["Shelby", "Court", "Van"]
+    };
+    var instance = createAnother(person);
+    instance.sayHi(); //"hi"
+</script>
+</html>

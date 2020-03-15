@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function SuperType(name) {
+        this.name = name
+        this.colors = ['red','blue','green']
+    }
+
+    SuperType.prototype.sayName = function() {
+        console.log('my name is:',this.name)
+    }
+
+    function SubType(name,age) {
+        // 继承属性,这里主要继承了colors属性
+        // 第二次调用SuperType()
+        SuperType.call(this,name)
+        this.age = age
+    }
+
+    //继承方法
+    //构建原型链
+    //第一次调用SupType
+    SubType.prototype = new SuperType()
+    // 重写SubType.prototype的constructor属性，指向自己的构造函数SubType
+    SubType.prototype.constructor = SubType
+    SubType.prototype.sayAge = function() {
+        console.log('I am', this.age ,'years old')
+    }
+
+    var instance1 = new SubType('dawa', 18)
+    instance1.colors.push('black')
+
+    var instance2 = new SubType('ewa',16)
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //利用一个空对象作为中介，将某个对象直接赋值给空对象构造函数的原型。
+    function object(obj) {
+        //object()对传入其中的对象执行了一次浅复制，将构造函数F的原型直接指向传入的对象。
+        function F() {}
+        F.prototype = obj
+        return new F()
+    }
+
+    var person = {
+        name: "Nicholas",
+        friends: ["Shelby", "Court", "Van"]
+    }
+
+    var instance1 = object(person);
+    instance1.name = "Greg";
+    instance1.friends.push("Rob");
+
+    var instance2 = object(person);
+    instance2.name = "Linda";
+    instance2.friends.push("Barbie");
+
+//  缺点：
+
+// 原型链继承多个实例的引用类型属性指向相同，存在篡改的可能。
+// 无法传递参数
+</script>
+
+</html>

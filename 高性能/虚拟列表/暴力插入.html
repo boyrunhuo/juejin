@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">开始</button>
+    <ul id="container"></ul>
+</body>
+<script>
+    //一次性插入所有DOM进行渲染，性能差
+    document.getElementById('button').addEventListener('click',function(){
+        //记录任务开始时间
+        let now = Date.now()
+        //插入总数
+        const total  = 100000
+        //容器
+        let ul = document.getElementById('container')
+        //将在容器中插入数据
+        for(let i = 0;i < total;i++) {
+            let li = document.createElement('li')
+            li.innerText = ~~(Math.random() * total)
+            ul.appendChild(li)
+        }
+        console.log('JS运行时间：',Date.now() - now);
+        setTimeout(() => {
+            //渲染完之后，才会执行这个宏任务
+            console.log('总运行时间：',Date.now() - now);
+        },0)
+    })
+</script>
+</html>

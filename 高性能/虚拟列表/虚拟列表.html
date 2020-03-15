@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .infinite-list-container {
+            height: 100%;
+            overflow: auto;
+            position: relative;
+        }
+
+        .infinite-list-phantom {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        .infinite-list {
+            left: 0;
+            right: 0;
+            top: 0;
+            position: absolute;
+            text-align: center;
+        }
+
+        .infinite-list-item {
+            padding: 10px;
+            color: #555;
+            box-sizing: border-box;
+            border-bottom: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="infinite-list-container">
+        <div class="infinite-list-phantom"></div>
+        <div class="infinite-list">
+
+        </div>
+    </div>
+</body>
+<script>
+    //参考：https://juejin.im/post/5db684ddf265da4d495c40e5
+    /**
+    infinite-list-container为可视区域的容器
+    infinite-list-phantom为容器内的占位，高度为列表总高度，用于形成滚动条
+    infinite-list为列表的渲染区域
+
+    假定可视区域高度固定：screenHight
+    假定列表每项高度固定：itemSize
+    列表数据：listData
+    当前滚动位置：scrollTop
+
+    列表总高度： listHeight = listData.length * itemSize
+    可显示的列表项数：visibleCount = Math.ceil(screenHight/itemSize)
+    数据起始索引 ：startIndex = Math.floor(scrollTop / itemSize)
+    数据结束索引：endIndex = startIndex + visibleCount
+    列表显示数据：visibleData = listData.slice(startIndex,endIndex)
+
+    当滚动后，由于渲染区域相对于可视区域已经发生了偏移，
+    此时我需要获取一个偏移量startOffset，
+    通过样式控制将渲染区域偏移至可视区域中。
+
+    偏移量：startOffset = scrollTop - (scrollTop % itemSize)
+    */
+    let infiniteListContainer = document.querySelector('.infinite-list-container')
+    let infiniteListPhantom = document.querySelector('.infinite-list-phantom')
+    let infiniteList = document.querySelector('.infinite-list')
+
+    const listCount = 1000
+    let listData = []
+    for (let i = 0; i < listCount; i++) {
+        listData.push(i)
+    }
+    const itemSize = 100
+    const listHeight = listData.length * itemSize
+
+    infiniteListPhantom.style.height = listHeight + 'px'
+
+    let scrollTop
+    let screenHight = document.body.clientHeight
+    let visibleCount = Math.ceil(screenHight / itemSize)
+    
+    let startIndex = 0
+    let endIndex = startIndex + visibleCount
+    
+    let visibleData = listData.slice(startIndex, Math.min(endIndex, listData.length))
+    let startOffset = 0
+    for(let i=0; i < visibleData.length;i++) {
+            let div = document.createElement('div')
+            div.className = 'infinite-list-item'
+            div.innerText = visibleData[i]
+            div.style.height = itemSize + 'px'
+            infiniteList.appendChild(div)
+
+    }
+
+    
+    infiniteListContainer.addEventListener('scroll', debounce(function () {
+        scrollTop = infiniteListContainer.scrollTop
+        startIndex = Math.floor(scrollTop/itemSize)
+        endIndex = startIndex + visibleCount
+        visibleData = listData.slice(startIndex, Math.min(endIndex, listData.length))
+        console.log('visibleData',scrollTop,startIndex,endIndex,visibleData);
+        
+        startOffset = scrollTop - (scrollTop % itemSize)
+        infiniteList.style.transform =  `translate3d(0,${startOffset}px,0)`
+        let currentNode = document.getElementsByClassName('infinite-list-item')
+        
+        for(let i = 0;i<currentNode.length;i++) {
+            infiniteList.removeChild(currentNode[i])
+        }
+        
+        for(let i=0; i < visibleData.length;i++) {
+            let div = document.createElement('div')
+            div.className = 'infinite-list-item'
+            div.innerText = visibleData[i]
+            div.style.height = itemSize + 'px'
+            infiniteList.appendChild(div)
+
+        }
+    }))
+
+     function debounce(fn,wait = 1000) {
+        let timer
+        return function() {
+            if(timer) {
+                clearTimeout(timer)
+            }
+            timer = setTimeout(() => {
+                fn.apply(this,arguments)
+            },wait)
+        }
+    }
+
+    
+</script>
+
+</html>
