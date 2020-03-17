@@ -1,0 +1,89 @@
+// 在线面试平台。将链接分享给你的朋友以加入相同的房间。
+// Author: tdzl2003<dengyun@meideng.net>
+
+// 1.请写出以下代码的输出结果
+var a,b= null;
+console.log (a,typeof a); // undefined,undefined
+console.log (b,typeof b); // null,null
+console.log (c,typeof c);// NAN,undefined
+
+
+
+
+// 2.请写出以下代码的输出结果
+var foo = "11"+2-"1";
+console.log(foo , typeof foo);//111, Number
+
+
+
+// 3.请写出以下代码的输出结果
+var flag = true;
+var func = function(){
+return "function";
+}
+console.log(flag && func());// true
+
+
+//4.请写出以下代码的输出结果
+var User = {
+count: 1, 
+getCount: function() {
+return this.count;
+}
+}; 
+var func = User.getCount;
+console.log(func() , User.getCount()); //undefined,1
+
+
+// 5.请写出以下代码的输出结果
+var a={a:1},b={b:2};
+!function foo(arg1,arg2){
+arg1 = arg2;
+arg2['c'] = 3;
+}(a,b);
+console.log( JSON.stringify(a) , JSON.stringify(b) );//"{a:1}","{b:2}"
+
+
+
+// 6.下面这个ul，如何点击每一列的时候alert其index?
+<ul id=" test ">
+<li>这是第一条</li>
+<li>这是第二条</li>
+<li>这是第三条</li>
+</ul>
+
+
+document.querySelector('#test').addEventListener('click',function(e) {
+	alert(e.target.)
+})
+
+
+
+
+// 7.字符串由六个字符'{'、'}'、'['、']'、'('、')'随机组成，通过一个方法判断该字符串能否全部配对。如'{[()]}'、'[{}]()'能够配对，'[{})'、'{( })'无法配对。提示：字符串先转成数组
+function isMatch(string) {
+	let s = string.splice()	
+}
+
+// 反例  [{]}()
+
+
+
+div.test#tts
+
+
+
+
+.test.test{
+  color: red;
+}
+
+.test{
+  color: blue;
+}
+
+
+
+
+
+

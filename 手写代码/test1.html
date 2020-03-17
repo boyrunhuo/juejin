@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #tss {
+            color:yellow
+        }
+        .test.test{
+        color: red;
+        }
+
+        .test{
+        color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tss" class="test">111</div>
+</body>
+<script>
+    var a = {
+            a: 1
+        },
+        b = {
+            b: 2
+        };
+    
+    ! function foo(arg1, arg2) {
+        arg1 = arg2;
+        arg2['c'] = 3;
+        console.log(a, b);
+        
+    }(a, b);
+
+
+    console.log(JSON.stringify(a), JSON.stringify(b));
+</script>
+
+</html>
