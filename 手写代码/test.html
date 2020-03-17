@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * call
+     * 将函数设置为对象的属性
+     * 执行函数
+     * 从对象中删除这个函数属性
+     * 返回执行的结果
+    */
+    Function.prototype.call2 = function(context = window) {
+        context.fn = this
+        let args = [...arguments].slice(1)
+        let result = context.fn(...args)
+        delete context.fn
+        return result
+    }
+    let foo = {
+        value:1
+    }
+
+    function bar(name,age) {
+        console.log('name',name)
+        console.log('age',age)
+        console.log('value',this.value)
+    }
+
+    bar.call2(foo,'gouge',18)
+
+    /**
+     * apply
+    */
+   Function.prototype.apply = function(context = window) {
+       context.fn = this
+       if(arguments[1]) {
+           context.fn(...arguments[1])
+       }
+   }
+
+   bar.apply2(foo,['gouge2',18])
+
+
+   /**
+    *bind 
+    * 
+   */
+
+
+    /**
+     * 创建一个新的空对象，
+     * 获取构造函数
+     * 将新对象的__proto__指向构造函数的prototype
+     * 绑定 this，执行构造函数
+     * 返回对象
+    */
+    function New2() {
+        let obj = {}
+        let Con = [].shift.call(arguments)
+        obj.__proto__ = Con.prototype
+        let result = Con.apply(obj.arguments)
+        return typeof result === 'object' ? result : obj
+    }
+
+    var array = New2(Array, 1, 2)
+
+</script>
+</html>
