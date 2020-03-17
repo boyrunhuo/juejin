@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" context="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" context="ie=edge">
     <title>Document</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
      * 而其余参数将作为新函数的参数，供调用时使用
     */
 
-    Function.prototype.bind2 = function(content) {
+    Function.prototype.bind2 = function(context) {
         if(typeof this != 'function') {
             throw Error('not a function')
         }
@@ -39,7 +39,17 @@
         let args = [...arguments].slice(1)
 
         let resFn = function() {
-            return fn.apply(this instanceof resFn ? this : content,args.concat(...arguments))
+            // 这个时候的arguments是指bind返回的函数传入的参数
+            var bindArgs = Array.prototype.slice.call(arguments)
+
+            // 当作为构造函数时，this 指向实例，fn 指向绑定函数，
+            // 因为下面一句 `fbound.prototype = this.prototype;`，
+            // 已经修改了 fbound.prototype 为 绑定函数的 prototype，
+            // 此时结果为 true，当结果为 true 的时候，this 指向实例。
+        
+            // 当作为普通函数时，this 指向 window，fn 指向绑定函数，
+            // 此时结果为 false，当结果为 false 的时候，this 指向绑定的 context。
+            return fn.apply(this instanceof resFn ? this : context,args.concat(bindArgs))
         }
 
         function tmp() {}
@@ -51,5 +61,46 @@
 
     const boundGetX = unboundGetX.bind2(module);
     console.log(boundGetX());
+
+    var value = 2
+    var foo = {
+        value:1
+    }
+
+    function bar(name,age) {
+        this.habit = 'shopping'
+        console.log(this.value)
+        console.log(name)
+        console.log(age)
+    }
+
+    bar.prototype.friend = 'kevin'
+    var bindFoo = bar.bind2(foo,'daisy')
+    var obj = new bindFoo('18')
+
+    console.log(obj.habit)
+    console.log(obj.friend)
+
+    // Function.prototype.bind3 = function(context) {
+    //     if(typeof this != 'function') {
+    //         throw Error('not a function')
+    //     }
+    //     var self = this
+    //     // 获取bind2函数从第二个参数到最后一个参数
+    //     var args = Array.prototype.slice.call(arguments,1);
+
+    //     return fbound = function() {
+    //         // 这个时候的arguments是指bind返回的函数传入的参数
+    //         var bindArgs = Array.prototype.slice.call(arguments)
+    //         // 或者
+    //         // bindArgs = [...arguments]
+    //         self.apply(this instanceof self ? this :context,args.concat(bindArgs))
+    //     }
+
+    //     function tmp() {}
+    //     tmp.prototype = this.prototype
+    //     fbound.prototype = new tmp();
+    //     return fbound
+    // }
 </script>
 </html>

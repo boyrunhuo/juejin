@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function createCounter() {
+        let counter = 0
+        const myFunction = function () {
+            counter = counter + 1
+            return counter
+        }
+        return myFunction
+    }
+    const increment = createCounter()
+    const c1 = increment()
+    const c2 = increment()
+    const c3 = increment()
+    console.log('example increment', c1, c2, c3)
+
+
+    //输出问题
+    // for (var i = 0; i < 5; i++) {
+    //     setTimeout(function() {
+    //         //存在闭包，1秒后输出5个5
+    //         console.log('this',this)
+    //         console.log(new Date, i);
+    //     }, 1000);
+    // }
+    //引入IIFE,按值传递参数，消除闭包造成的影响
+    for(var i = 0;i < 5;i++) {
+        (function(j){
+            setTimeout(function() {
+                console.log('this',this)
+                console.log('i',j)
+            })
+        })(i)
+    }
+    
+    console.log(new Date, i);
+</script>
+
+</html>

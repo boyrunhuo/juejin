@@ -16,8 +16,11 @@
 
     function debounce(fn,wait = 1000) {
         let timer
+
         return function() {
             if(timer) {
+                console.log('timer exists', timer);
+                
                 clearTimeout(timer)
             }
             timer = setTimeout(() => {
