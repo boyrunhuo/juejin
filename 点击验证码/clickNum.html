@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: absolute;
+            width: 320px;
+            height: 234px;
+            overflow: hidden;
+            left: 50%;
+            top: 50%;
+            margin-left: -160px;
+            margin-top: -100px;
+
+        }
+
+        .img-wrap {
+            width: 320px;
+            height: 200px;
+            background-image: url('./bg.jpg');
+            background-size: cover;
+        }
+
+        .circle-wrap {
+            text-align: center;
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -60px;
+            margin-top: -60px;
+        }
+
+        .circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #03a9f4cf;
+            display: inline-block;
+            line-height: 50px;
+            text-align: center;
+            margin: 5px 0;
+            cursor: pointer;
+            
+        }
+        .circle > b {
+            font-weight: 900;
+            font-size: 40px;
+            color: #fff;
+            display:inline-block;
+            width:100%;
+            height: 100%;
+        }
+        /* .circle:nth-child(1) > b {
+            color: #F18829;
+            text-shadow: 
+            #ef7b11 1px 1px, 
+            #f7bd89 -1px -1px, 
+             #f49d4f -2px -2px, 
+             #f49d4f -1px -2px, 
+             #f49d4f -1px -3px;
+            transform: rotate(-3deg);
+            transform:skew(-15deg);
+        }
+        .circle:nth-child(2) > b {
+            color: #F18829;
+            text-shadow: 
+            #ef7b11 1px 1px, 
+            #f7bd89 -1px -1px, 
+             #f49d4f -2px -2px, 
+             #f49d4f -1px -2px, 
+             #f49d4f -1px -3px;
+            transform: rotate(-3deg);
+            transform:skew(20deg);
+        }
+        .circle:nth-child(3) > b {
+            color: #F18829;
+            text-shadow: 
+            #ef7b11 1px 1px, 
+            #f7bd89 -1px -1px, 
+             #f49d4f -2px -2px, 
+             #f49d4f -1px -2px, 
+             #f49d4f -1px -3px;
+            transform: rotate(-3deg);
+            transform:skew(25deg);
+        }
+        .circle:nth-child(4) > b {
+            color: #F18829;
+            text-shadow: 
+            #ef7b11 1px 1px, 
+            #f7bd89 -1px -1px, 
+             #f49d4f -2px -2px, 
+             #f49d4f -1px -2px, 
+             #f49d4f -1px -3px;
+            transform: rotate(-3deg);
+            transform:skew(15deg);
+        } */
+        .circle:hover {
+            background-color: #2196f3;
+
+        }
+
+        .tip-wrap {
+            height: 30px;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="img-wrap">
+
+            <div class="circle-wrap">
+                <span class="circle">
+                    <b>4</b>
+                </span>
+                <span class="circle">
+                    <b>2</b>
+                </span>
+                <span class="circle">
+                    <b>6</b>
+                </span>
+                <span class="circle">
+                    <b>5</b>
+                </span>
+            </div>
+        </div>
+        <div class="tip-wrap">
+            请按住图中的奇数3秒
+        </div>
+
+    </div>
+</body>
+
+</html>

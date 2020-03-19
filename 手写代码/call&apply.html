@@ -20,6 +20,7 @@
 
     Function.prototype.call2 = function(content = window) {
         content.fn = this
+        //把类数组对象argument转化为数组
         let args = [...arguments].slice(1)
         let result = content.fn(...args)
         delete content.fn

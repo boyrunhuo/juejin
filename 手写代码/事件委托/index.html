@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+          ul.test {
+            color:red;
+        }
+        .test {
+            color: blue
+        }
+      
+    </style>
+</head>
+<body>
+    <ul id="test" class="test">
+        <li>一</li>
+        <li>二</li>
+        <li>三</li>
+    </ul>    
+</body>
+<script>
+    document.getElementById('test').addEventListener('click', function(e){
+        // console.log(document.getElementById('test').children);
+        
+        var index = Array.prototype.indexOf.call(document.getElementById('test').children,e.target)
+        console.log('index',index)
+        for(let i = 0;i<document.getElementById('test').children.length;i++) {
+            // console.log(document.getElementById('test').children[i]);
+            if(document.getElementById('test').children[i] === e.target) {
+                console.log('i',i)
+            }
+        }
+    })
+    let a = {a:1},b={b:2}
+    function test(arg1,arg2) {
+        arg1  = arg2
+        arg2['c'] = '3'
+        console.log(arg1,arg2)
+    }
+    test(a,b)
+    console.log(a,b)
+
+</script>
+</html>
