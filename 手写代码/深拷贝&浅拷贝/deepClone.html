@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const obj = {
+    arr: [111, 222],
+    obj: {key: '对象'},
+    a: () => {console.log('函数')},
+    date: new Date(),
+    reg: /正则/ig
+}
+
+/**
+ * JSON.parse(JSON.stringify(obj)
+ * date变成字符串，函数直接不见了
+*/
+console.log(JSON.parse(JSON.stringify(obj)))
+
+/**
+ * for...in递归
+ * 无法拷贝函数，date，reg类型的对象;
+*/
+function isObj(obj) {
+    return (typeof obj === 'object' || typeof obj === 'function') && obj !== null 
+}
+
+function deepClone(obj) {
+    let tempObj = Array.isArray(obj) ? [] : {}
+    for(let key in obj) {
+        tempObj[key] = isObj(obj[key]) ? deepClone(obj[key]) : obj[key]
+    }
+    return tempObj
+}
+console.log(deepClone(obj))
+
+/**
+ * 特殊对象拷贝
+ * 只解决date，reg类型，其他的可以自己添加
+*/
+
+function deepClone2(obj, hash = new WeakMap()) {
+    let cloneObj
+    let Constructor = obj.constructor
+    switch (Constructor) {
+        case RegExp: 
+            cloneObj = new Constructor(obj)
+            break
+        case Date:
+            cloneObj = new Constructor(obj.getTime())
+            break
+        default:
+            if(hash.has(obj)) return hash.get(obj)
+            cloneObj = new Constructor()
+            hash.set(obj, cloneObj)
+    }
+
+    for(let key in obj) {
+        cloneObj[key] = isObj(obj[key]) ? deepClone2(obj[key], hash) : obj[key];
+
+    }
+    return cloneObj
+}
+
+console.log(deepClone2(obj))
+
+</script>
+</html>

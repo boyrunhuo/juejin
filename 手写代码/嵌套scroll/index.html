@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            height: 2000px;
+            overflow: auto;
+        }
+
+        .scroll-box {
+            height: 200px;
+            width: 500px;
+            overflow: auto;
+            position: relative;
+            border: 1px solid blue;
+            top: 300px;
+        }
+
+        .scroll-item {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            top: 300px;
+            background: red;
+        }
+
+        .to-top {
+            height: 100px;
+            width: 100px;
+            background: green;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+
+
+        <div class="scroll-box" id="box">
+            <div class="scroll-item" id="item">
+
+            </div>
+            <div class="to-top" id="toTop">up</div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('box').addEventListener('click', function (e) {
+        console.log('box', e)
+    })
+    document.getElementById('item').addEventListener('click', function (e) {
+        console.log('item', e)
+
+    })
+    document.getElementById('wrap').addEventListener('click', function (e) {
+        console.log('wrap', e)
+    })
+    document.body.addEventListener('click', function (e) {
+        console.log('body', e)
+    })
+    document.getElementById('toTop').addEventListener('click', function (e) {
+        console.log('toTop', e)
+
+    })
+</script>
+
+</html>
