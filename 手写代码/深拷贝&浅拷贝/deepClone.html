@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
 </head>
 <body>
-    
+    <p>111</p>
 </body>
 <script>
+    console.log('lodash',_)
 const obj = {
     arr: [111, 222],
     obj: {key: '对象'},
@@ -71,5 +73,50 @@ function deepClone2(obj, hash = new WeakMap()) {
 
 console.log(deepClone2(obj))
 
+//使用lodash进行深拷贝
+console.log('cloneDeep',_.cloneDeep(obj))
+
+
+
+// customizer自定义深拷贝方法
+function customizer(value) {
+  if (_.isElement(value)) {
+    return value.cloneNode(true);
+  }
+}
+ 
+var el = _.cloneDeepWith(document.body, customizer);
+console.log('el',el)
+
+
+const { cloneDeepWith, isObject, isUndefined } = _;
+
+const newobj = {
+  a0: true,
+  b0: true,
+  c0: undefined,
+  obj1: {
+    a1: true,
+    b1: true,
+    c1: undefined
+  }
+};
+
+const result = cloneDeepWith(newobj, v => {  
+  return isObject(v) ? undefined : 'custom value';
+});
+
+console.log('把undefined替换为custom value',result);
+
+
+const cloneDeepWithoutUndefined = (obj) =>
+  _.transform(obj, (r, v, k) => {//result, value, key
+    if(_.isUndefined(v)) return;
+    r[k] = _.isObject(v) ? cloneDeepWithoutUndefined(v) : v;
+  });
+  
+const result1 = cloneDeepWithoutUndefined(newobj);
+
+console.log('剔除undefined',result1);
 </script>
 </html>

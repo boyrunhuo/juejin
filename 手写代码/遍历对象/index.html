@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+let obj = {
+    arr: [111, 222],
+    obj: {key: '对象'},
+    a: () => {console.log('函数')},
+    date: new Date(),
+    reg: /正则/ig
+}
+
+// 原型链上添加属性
+obj.__proto__.name = 'lii'
+
+for(let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+        //for...in会将原型链上的属性也输出，需要通过hasOwnProperty判断是否是对象本身的属性
+        console.log('key', key)
+    }
+}
+
+
+//Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组
+console.log('Object.keys',Object.keys(obj))
+
+
+//Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组，
+//其排列与使用 for...in 循环遍历该对象时返回的顺序一致
+//（区别在于 for-in 循环还会枚举原型链中的属性）。
+console.log('Object.entries(obj)',Object.entries(obj))
+for(let [key,value] of Object.entries(obj)){
+    console.log('key', key,value)
+}
+
+</script>
+</html>
