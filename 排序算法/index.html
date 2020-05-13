@@ -13,13 +13,61 @@
 
 </body>
 <script>
-        var arr = [3, 44, 38, 5, 47, 15, 36, 26];
-        // console.log('bubbleSort',bubbleSort(arr));
-        // console.log('bubbleSort2',bubbleSort2(arr));
-        // console.log('selectionSort',selectionSort(arr));
-        // console.log('binaryInsertionSort',binaryInsertionSort(arr));
-        // console.log('quickSort',quickSort(arr,0,arr.length - 1));
-        console.log('quickSort2',quickSort2(arr,0,arr.length - 1));
+    var arr = [3, 44, 38, 5, 47, 15, 36, 26];
+    // console.log('bubbleSort',bubbleSort(arr));
+    // console.log('bubbleSort2',bubbleSort2(arr));
+    // console.log('selectionSort',selectionSort(arr));
+    // console.log('binaryInsertionSort',binaryInsertionSort(arr));
+    // console.log('quickSort',quickSort(arr,0,arr.length - 1));
+    console.log('quickSort2', quickSort2(arr, 0, arr.length - 1));
+    var nodes = [
+    {id: 10, title: '文章10', parentId: 4},
+    {id: 2, title: '文章2', parentId: 0},
+    {id: 4, title: '文章4', parentId: 2},
+    {id: 12, title: '文章', parentId: 2},
+    {id: 8, title: '文章8', parentId: 4}
+]
+// function solution (arr) {
+//     if (!arr.length) return
+//     let obj = {}
+//     arr.forEach(item => {
+//      obj[item.id] = item   
+//     })
+//     let result = []
+//     arr.forEach(item => {
+//         let parent = obj[item.parentId]
+//         if (parent) {
+//             parent.children = []
+//             parent.children.push(item)
+//         } else {
+//             result.push(item)
+//         }
+//     })
+//     return result[0]
+// }
+// console.log(solution(nodes))
+var map = {}
+nodes.forEach(n => {
+    map[n.id] = n
+})
+Object.keys(map).forEach(k => {
+    let e = map[k]
+    let df = -1
+    let father = null
+    let len = 0
+    if (e.parentId) { // 非父节点
+        df = e.parentId
+        father = map[df]
+        if (Array.isArray(father.children)) {
+            len = father.children.length
+            father.children.push({})
+            father.children[len] = map[e.id]
+        } else {
+            father.children = [map[e.id]]
+        }
+    }
+})
+console.log(map);
 
 </script>
 

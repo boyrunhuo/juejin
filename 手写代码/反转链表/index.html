@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//反转数组
+//使用reserve方法
+let arr = [1,2,3,4,5]
+arr.reverse()
+console.log(arr)//[5,4,3,2,1]
+
+//使用循环
+let arrA = [1,2,3,4,5,6,7]
+for(let i = 0;i<arrA.length / 2;i++) {
+    [arrA[i],arrA[arrA.length - i - 1]] = [arrA[arrA.length - i - 1],arrA[i]]
+}
+console.log(arrA)//[7,6,5,4,3,2,1]
+
+//反转链表
+//链表特点
+//长度为n
+//无法通过下标遍历
+//只能通过当前节点来访问下一个节点的链式结构
+
+function Node(val) {
+    //节点构造函数
+    this.val = val
+    this.next = null
+}
+
+function List(array) {
+    //定义链表
+    this.head = null
+    let i = 0,temp = null
+    while (i < array.length) {
+        if(i === 0) {
+            this.head = new Node(array[i])
+            temp = this.head
+        } else {
+            let newNode = new Node(array[i])
+            temp.next = newNode
+            temp = temp.next
+        }
+        i++
+    }
+}
+
+let arrB = [1,2,3,4,5,6,7,8]
+let list = new List(arrB)
+console.log(list)
+
+function traverseList(listHead) {
+    //遍历链表
+    while (listHead) {
+        console.log(listHead.val)
+        listHead = listHead.next
+    }
+}
+traverseList(list.head)
+</script>
+</html>

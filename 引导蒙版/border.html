@@ -27,11 +27,12 @@
             overflow: hidden;
         }
 
+        /* 增加大尺寸伪元素实现镂空位置圆角 */
         .cover::before {
             content: '';
             width: 100%;
             height: 100%;
-            /* border-radius: 50%; */
+            border-radius: 50%;
             border: 400px solid #000;
             position: absolute;
             left: -400px;
