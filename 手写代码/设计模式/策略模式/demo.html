@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id='loginForm' action="" method="post">
+        <label for="account">手机号</label>
+        <input type="number" id="account" name="account">
+        <label for="password">密码</label>
+        <input type="password" id="password" name="password">
+        <button id='login'>登录</button>
+    </form>
+</body>
+<script>
+    /**策略类*/
+    var strategies = {
+        isNonEmpty: function (value, errorMsg) {
+            if (value === '' || value === null) {
+                return errorMsg
+            }
+        },
+        isMobile: function (value, errorMsg) {
+            if (!/(^1[3|4|5|7|8][0-9]{9}$)/.test(value)) {
+                return errorMsg
+            }
+        },
+        minLength: function (value, length, errorMsg) {
+            if (value.length < length) {
+                return errorMsg
+            }
+        }
+    }
+
+    var loginForm = document.getElementById('loginForm')
+
+    loginForm.onsubmit = function (e) {
+        e.preventDefault()
+
+        var account = document.getElementById("account").value;
+        var pwd = document.getElementById("password").value;
+        var accountIsMobile = strategies.isMobile(account,'手机号格式错误')
+        var pwdMinLength = strategies.minLength(pwd,8,'密码不能小于8位')
+        var isAccountEmpty = strategies.isNonEmpty(account,'账户不能为空')
+        var errorMsg = isAccountEmpty || accountIsMobile || pwdMinLength
+        if(errorMsg) {
+            alert(errorMsg)
+            return errorMsg
+        }
+    }
+</script>
+
+</html>

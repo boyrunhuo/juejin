@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 单例模式：保证一个类仅有一个实例，并提供提供一个访问它的全局访问点
+class CreateUse {
+    constructor(name) {
+        this.name = name;
+        this.getName();
+    }
+
+    getName() {
+        return this.name;
+    }
+}
+
+// 代理实现单例模式
+// 这里使用闭包封装了instance这个私有变量，
+// 当第一次执行new ProxyMode时，instance被指向CreateUse的实例
+// 当第二次执行new ProxyMode时，由于有闭包的存在，闭包里已经有了instance这个变量，instance已存在，便不会再指向新的实例，嘻嘻
+var ProxyMode = (function() {
+    var instance = null;
+    return function(name) {
+        if(!instance) {
+            instance = new CreateUse(name);
+        }
+        return instance
+    }
+})()
+
+// 测试单体模式的实例
+// 因为上面是个IIFE,所以这样写相当于就是
+/**(function(){
+    return function(name) {
+
+    }})()('aaa')*/
+// 也就是
+/**
+    function('aaa')
+*/
+var a = new ProxyMode('aaa')
+var b = new ProxyMode('bbb')
+console.log('a',a)
+console.log('b',b)
+console.log('a===b',a===b)
+</script>
+</html>
