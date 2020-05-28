@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // 最普通的Promise
+    function getList(bool) {
+        return new Promise((resolve, reject) => {
+            if (bool) {
+                setTimeout(() => {
+                    resolve('getlist success')
+                }, 3000);
+            } else {
+                reject('getlist error')
+            }
+        })
+    }
+
+    // getList(false).then(res => {
+    //     console.log('res:', res);
+
+    // }).catch(err => {
+    //     console.log('err:', err)
+    // })
+
+
+
+    // getList(false).then(res => {
+    //     console.log('res2:', res);
+    // }, err => {
+    //     console.log('err2:', err)
+    // })
+
+
+    //链式调用顺序
+    new Promise((resolve, reject) => {
+        console.log("log: 外部promise");
+        resolve();
+    })
+        .then(() => {
+            console.log("log: 外部第一个then");
+            new Promise((resolve, reject) => {
+                console.log("log: 内部promise");
+                resolve();
+            })
+                .then(() => {
+                    console.log("log: 内部第一个then");
+                })
+                .then(() => {
+                    console.log("log: 内部第二个then");
+                });
+        })
+        .then(() => {
+            console.log("log: 外部第二个then");
+        });
+</script>
+
+</html>

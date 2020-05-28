@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // 二叉树的一个节点Node由data，left，right组成，
+    //data保存本节点的值，left指向左节点，right指向右节点。
+    //二叉树有一个特殊性:相对本节点较小的值保存在左节点，
+    //相对本节点较大的值保存在右节点，该特性能让查值效率提高！
+
+
+    function Node(data, left, right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
+    }
+
+    // 二叉树构造函数
+    function BST() {
+        this.root = null
+        this.insert = insert
+        this.find = find
+        this.remove = remove
+        this.show = () => {return this.data}
+    }
+
+    function insert(data) {
+        var node = new Node(data, null, null)
+        if (this.root === null) {
+            this.root = node
+        } else {
+            var current = this.root
+            while (true) {
+                if (current.data > data) {
+                    if (current.left === null) {
+                        current.left = node
+                        break
+                    }
+                    current = current.left
+                } else {
+                    if (current.right === null) {
+                        current.right = node
+                        break
+                    }
+                    current = current.right
+                }
+            }
+        }
+    }
+
+    var bst = new BST()
+    bst.insert(5);
+    bst.insert(3);
+    bst.insert(7);
+    bst.insert(4);
+    bst.insert(2);
+    console.log('bst', bst)
+
+    //二叉树查找
+    function find(data) {
+        var current = this.root
+        while (true) {
+            if (data === current.data) {
+                return current
+            }
+            current = data < current.data ? current.left : current.right
+            if (current === null) {
+                return null
+            }
+        }
+    }
+    console.log('find', bst.find(4))
+
+    function remove(data) {
+        this.root = removeNode(this.root, data)
+    }
+    function removeNode(node, data) {
+        if (node === null) {
+            return null;
+        }
+        if (data === node.data) {
+            if (node.left === null && node.right === null) {
+                return null;
+            }
+            if (node.left === null) {
+                return node.right;
+            }
+            if (node.right === null) {
+                return node.left;
+            }
+        } else if (data < node.data) {
+            node.left = removeNode(node.left, data);
+            return node;
+        } else {
+            node.right = removeNode(node.right, data);
+            return node;
+        }
+    }
+
+
+    // console.log('remove', bst.remove(4))
+    // console.log('after remove', bst)
+    
+    //前序遍历,根左右
+    function preOrderTraversal(root) {
+        let result = []
+        var preOrderTraverNode = (node) => {
+            if(node) {
+                result.push(node.data)
+                preOrderTraverNode(node.left)
+                preOrderTraverNode(node.right)
+            }
+        }
+        preOrderTraverNode(root)
+        return result
+    }
+    console.log('preOrderTraversal',preOrderTraversal(bst.root))
+
+    //中序遍历，左根右
+    function inOrderTraversal(root) {
+        let result = []
+        var inOrderTraverNode = (node) => {
+            if(node) {
+                inOrderTraverNode(node.left)
+                result.push(node.data)
+                inOrderTraverNode(node.right)
+            }
+        }
+        inOrderTraverNode(root)
+
+        return result
+    }
+
+    console.log('inOrderTraversal',inOrderTraversal(bst.root)) ;
+
+    //后序遍历，左右根
+    function postOrderTraversal(root) {
+        let result = []
+        var postOrderTraverNode =(node) => {
+            if(node) {
+                postOrderTraverNode(node.left)
+                postOrderTraverNode(node.right)
+                result.push(node.data)
+            }
+        }
+        postOrderTraverNode(root)
+        return result
+    }
+    console.log('postOrderTraversal',postOrderTraversal(bst.root)) ;
+
+
+    //深度优先遍历
+    function levelOrder(root) {
+        let result = []
+        var dep = (node,depth) => {
+            if(!node) return
+            result[depth] = result[depth] || []
+            result[depth].push(node.data)
+            dep(node.left,depth+1)
+            dep(node.right,depth+1)
+        }
+        dep(root,0)
+        return result.flat()
+    }
+    console.log('levelOrder',levelOrder(bst.root)) ;
+
+    //广度优先遍历
+    function levelOrder2(root) {
+        let result = []
+        let queue = [root]
+        while(queue.length) {
+            let curr = []
+            let temp = []
+            while(queue.length) {
+                let node = queue.shift()
+                curr.push(node.data)
+                if(node.left) temp.push(node.left)
+                if(node.right) temp.push(node.right)
+            }
+            result.push(curr)
+            queue = temp
+        }
+        return result.flat()
+    }
+    console.log('levelOrder2',levelOrder2(bst.root)) ;
+
+</script>
+
+</html>

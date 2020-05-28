@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//当n = 0,f(n) = 0;当n = 1, f(n) = 1;当n > 1, f(n) = f(n-1) + f(n-2)。
+//现在要求输入一个整数n，请你输出斐波那契数列的第n项
+
+// 0,1,1,2,3,5,8,13...
+//递归解法
+function fibonacci(n) {
+    if(n < 0) {
+        console.error("error")
+        return
+    }
+    if(n === 0) {
+        return 0
+    }
+    if(n === 1) {
+        return 1
+    }
+
+    return fibonacci(n - 2) + fibonacci(n - 1)
+}
+
+console.log(fibonacci(7))
+
+//循环解法
+function fib(n) {
+    if(n < 0) {
+        console.error("error")
+        return
+    }
+    if(n === 0) {
+        return 0
+    }
+    if(n === 1) {
+        return 1
+    }
+    let fn_2 = 0
+    let fn_1 = 1
+    let fn = 0
+    for(let i = 2;i<=n;i++) {
+        fn = fn_1 + fn_2
+        fn_2 = fn_1
+        fn_1 = fn
+    }
+    return fn
+}
+console.log(fib(6))
+
+</script>
+</html>

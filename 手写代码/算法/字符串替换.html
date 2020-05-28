@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+/**
+题述：实现一个函数,将字符串中的每个空格替换成%20。
+如输入'we arr happy', 则输出'we%20are%20happy'
+*/
+
+let str = 'we are happy'
+//正则替换
+function replaceStr(str) {
+    if(typeof str !== 'string') {
+        console.log('str is not a string')
+        return
+    } else  {
+        return str.replace(/\s/g,'%20')
+    }
+}
+
+// 使用遍历替换
+function replaceStr2(str) {
+    if (typeof str !== 'string') {
+      console.log('str is not string');
+      return;
+    }
+    let strArr = [];
+    let len = str.length;
+    let i = 0;
+    while(i < len) {
+      if (str[i] === ' ' ) {
+        strArr[i] = '%20';
+      } else {
+        strArr[i] = str[i];
+      }
+      i++
+    }
+    return strArr.join('');
+  }
+
+console.log(replaceStr2(str))
+</script>
+</html>

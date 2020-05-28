@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//二分查找，是在一个有序的序列里查找某一个值
+function binaryFind(arr,target,low = 0,high = arr.length - 1) {
+    let currentIndex = Math.floor((low+high)/2)
+    let current = arr[currentIndex]
+    if(current === target) {
+        return `找到了${target}在第${currentIndex + 1}个`
+    } else if(current > target) {
+        //大了,递归
+        return binaryFind(arr,target,0,currentIndex - 1)
+    } else {
+        return binaryFind(arr,target,currentIndex + 1,high)
+    }
+    return -1
+}
+
+var arr = [1,2,3,4,9,11,18,21,26,32,41,54,68,75,96,101]
+console.log(binaryFind(arr,11))
+</script>
+</html>
+

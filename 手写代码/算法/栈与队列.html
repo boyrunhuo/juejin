@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//栈：先进后出， 队列：先进先出
+//题述：用两个栈实现队列
+
+let stack_a = [];
+let stack_b = [];
+
+function push(node) {
+    stack_a.push(node)
+}
+
+function pop() {
+    if(stack_b.length === 0) {
+        for(let i = 0,len = stack_a.length; i < len;i++){
+            //把栈a中的数据依次放到栈b
+            //那么原先早进入栈a的数据会出现在栈b栈顶的位置
+            stack_b.push(stack_a.pop());
+        }
+    }
+    return stack_b.pop()
+}
+
+//题述：使用两个队列实现栈
+
+//两个队列，拿一个队列做存储区，有数据的队列依次出队数据到缓存队列，那么当有数据的队列出到最后一个数据时，
+//即是需要出栈的数据。入栈的数据入队到有数据的队列,如果两个为空，任取一个入队
+let queue_a = []
+let queue_b = []
+function push1(node) {
+    if(queue_a.length && queue_b.length) {
+        console.log('error')
+        return
+    }
+    if(queue_a.length) {
+        queue_a.push(node)
+    }else if(queue_b.length) {
+        queue_b.push(node)
+    }else {
+        queue_a.push(node)
+    }
+}
+
+function pop1() {
+    if(queue_a.length && !queue_b.length) {
+        for(let i = 0,len =queue_a.length; i<len;i++) {
+            //有数据的队列依次出队数据到缓存队列
+            if(i === len - 1) {
+                //当有数据的队列出到最后一个数据时
+                //即是需要出栈的数据
+                return queue_a.shift()
+            } else {
+                //拿一个队列做存储区
+                queue_b.push(queue_a.shift())
+            }
+        }
+    } else if(!queue_a.length && queue_b.length) {
+        for(let i = 0,len=queue_a.length; i < len;i++) {
+            if(i === len - 1) {
+                return queue_b.shift()
+            } else {
+                queue_a.push(queue_b.shift())
+            }
+        }
+    } else if(queue_a.length && queue_b.length) {
+        console.log('error')
+        return
+    } else {
+        return null
+    }
+    return null
+}
+</script>
+</html>

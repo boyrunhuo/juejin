@@ -29,7 +29,7 @@
     //继承方法
     //构建原型链
     //第一次调用SupType
-    SubType.prototype = new SuperType()
+    SubType.prototype = new SuperType('lili')
     // 重写SubType.prototype的constructor属性，指向自己的构造函数SubType
     SubType.prototype.constructor = SubType
     SubType.prototype.sayAge = function() {

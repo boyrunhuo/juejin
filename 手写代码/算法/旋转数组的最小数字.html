@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+/**
+题述：把一个数字最开始的若干个元素搬到数组的末尾，称之为数组的旋转。
+输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
+例如数组[3,4,5,1,2]为[1,2,3,4,5]的一个旋转，该数组的最小值为1
+*/
+
+//二分查找
+let rotateArr = [2,3,4,5,1]
+function findMinFromRotateArr(arr) {
+    if(!Array.isArray(arr)) {
+        console.error("wrong")
+        return
+    }
+    let start = 0
+    let end = arr.length - 1
+    while((end - start) > 1) {
+        let mid = Math.floor((end+start)/2)
+        if(arr[mid] >= arr[end]) {
+            start = mid
+        } else {
+            end = mid
+        }
+    }
+    return arr[end]
+}
+console.log(findMinFromRotateArr(rotateArr))
+</script>
+</html>

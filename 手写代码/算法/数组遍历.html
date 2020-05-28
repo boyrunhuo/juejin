@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+/**
+题述： 一个数组中，每一行都按照从左至右递增的顺序排序，每一列按照从上到下递增的顺序排序。
+完成：输入一个这样的二维数组和一个整数，判断数组是否含有这个整数
+*/
+let arr = [[1,2,3,4,5,6],[2,3,4,5,6,7],[3,4,5,6,7,8],[4,5,6,7,8,9]]
+console.log(arr)
+function findNumInSortedArray(arr,num) {
+    if(!Array.isArray(arr) || typeof num !== 'number' || isNaN(num)) {
+        return
+    }
+    let rows = arr.length; // 行数
+    let columns = arr[0].length;//列数
+    //从数组的右上角开始遍历
+    let row = 0;//当前行
+    let column = columns - 1//当前列
+    while (row < rows && column > 0) {
+        if(arr[row][column] === num) {
+            return true;
+        } else if(arr[row][column] > num) {
+            column--;
+        } else {
+            row ++ 
+        }
+    }
+    return false;
+ }
+
+ console.log(findNumInSortedArray(arr,5))
+ console.log(findNumInSortedArray(arr,10))
+
+</script>
+</html>
