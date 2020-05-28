@@ -31,7 +31,6 @@
         this.insert = insert
         this.find = find
         this.remove = remove
-        this.show = () => {return this.data}
     }
 
     function insert(data) {
@@ -58,6 +57,8 @@
         }
     }
 
+
+
     var bst = new BST()
     bst.insert(5);
     bst.insert(3);
@@ -79,6 +80,8 @@
             }
         }
     }
+
+
     console.log('find', bst.find(4))
 
     function remove(data) {
@@ -126,6 +129,8 @@
     }
     console.log('preOrderTraversal',preOrderTraversal(bst.root))
 
+
+
     //中序遍历，左根右
     function inOrderTraversal(root) {
         let result = []
@@ -172,6 +177,7 @@
         dep(root,0)
         return result.flat()
     }
+
     console.log('levelOrder',levelOrder(bst.root)) ;
 
     //广度优先遍历

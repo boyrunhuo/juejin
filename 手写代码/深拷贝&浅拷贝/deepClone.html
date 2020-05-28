@@ -118,5 +118,24 @@ const cloneDeepWithoutUndefined = (obj) =>
 const result1 = cloneDeepWithoutUndefined(newobj);
 
 console.log('剔除undefined',result1);
+
+
+function deepClone3(obj,target) {
+  var target = target || {}
+  for(let key in obj) {
+    if(obj.hasOwnProperty(key)) {
+      if(Array.isArray(obj[key])) {
+        target[key] = []
+        deepClone3(obj[key], target[key])
+      } else if(typeof obj[key] === 'object' && obj[key] !== null) {
+        target[key] = {}
+        deepClone3(obj[key], target[key])
+      } else {
+        target[key] = obj[key]
+      }
+    }
+  }
+  return target
+}
 </script>
 </html>
