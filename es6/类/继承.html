@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Point {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        static staticMethod() {
+            console.log('this is a static method')
+        }
+        toString() {
+            return `(${this.x},${this.y})`
+        }
+    }
+
+    class ColorPoint extends Point {
+        //不管有没有显式定义，任何一个子类都有constructor方法。
+        //如果不定义，会隐式地执行super方法
+        constructor(x, y, color) {
+            super(x, y)//调用父类的constructor(x,y)
+            this.color = color
+        }
+        toString() {
+
+            return this.color + ' ' + super.toString(); // 调用父类的toString()
+        }
+    }
+
+    Point.staticMethod()
+    ColorPoint.staticMethod() // 静态方法可以被继承
+
+
+    let point = new Point(95, 27);
+    let colorpoint = new ColorPoint(6, 45, 'red')
+
+
+    console.log('Point instance', point)
+    console.log('ColorPoint instance', colorpoint)
+
+    console.log('子类复写父类方法',colorpoint.toString())
+
+</script>
+
+</html>

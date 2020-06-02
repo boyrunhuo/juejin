@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+//ES5写法
+function Point(x,y) {
+    this.x = x;
+    this.y = y;
+}
+
+Point.prototype.toString = function() {
+    return `(${this.x},${this.y})`
+}
+
+var point = new Point(6,45)
+
+// ES6
+class Point2 {
+    constructor(x,y) {
+        this.x = x
+        this.y = y
+    }
+
+    toString() {
+        return `(${this.x},${this.y})`
+    }
+}
+
+var point2 = new Point2(45,6)
+
+//getter和setter
+class MyClass {
+    constructor(name) {
+        this.name = name
+    }
+    get myProp() {
+        console.log('myProp getter')
+        return 'myProp getter'
+    }
+
+    set myProp(val) {
+        console.log('myProp setter',val)
+    }
+
+    get myProp1() {
+        console.log('myProp1 getter')
+    }
+}
+
+let myclass = new MyClass('zkq')
+//触发setter
+myclass.myProp = 123
+//触发getter
+myclass.myProp
+myclass.myProp1
+
+//存值函数和取值函数是设置在属性的 Descriptor 对象上的。
+var descriptor = Object.getOwnPropertyDescriptor(
+    MyClass.prototype, "myProp"
+);
+console.log('descriptor',descriptor)
+
+//类表达式
+const MyClass2 = class Me{
+    name = 'zkq'
+    getClassName() {
+        return Me.name 
+    }
+    getName() {
+        return this.name
+    }
+}
+
+let myclass2 = new MyClass2()
+console.log(myclass2.getClassName())//Me
+console.log(myclass2.getName())//zkq
+console.log(MyClass2.name)//Me
+
+//类不存在变量提升，不同于函数声明
+// new Foo(); // ReferenceError
+// class Foo {}
+
+//静态方法
+//类相当于实例的原型，所有在类中定义的方法，都会被实例继承。
+//如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用
+class Foo{
+    constructor() {
+        console.log('new Foo')
+    }
+    static staticProp = 'staticProp'
+    dynamicProp = 'dynamicProp'
+    static Say() {
+        //如果静态方法包含this关键字，这个this指的是类，而不是实例。
+        this.SayWhat()
+    }
+
+    static SayWhat() {
+        console.log('I am Foo')
+    }
+
+    SayWhat() {
+        console.log('I am instance of Foo')
+    }
+
+}
+
+Foo.Say()//I am Foo
+var foo = new Foo() // __proto__上没有Say方法
+foo.SayWhat()
+console.log('static prop',Foo.staticProp)
+
+</script>
+</html>
